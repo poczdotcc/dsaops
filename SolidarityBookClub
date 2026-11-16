@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Proposal in Solidarity — DSA Education Foundation × Three Avenues Bookshop</title>
+  <title>Solidarity Book Club Union — Three Avenues Bookshop Pitch</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Literary Serifs + Fountain Pen Script -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts: Requested Editorial & Handwriting Pairings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Homemade+Apple&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
       --paper-cream: #f8f2e4;
       --paper-aged: #efe6d1;
-      --paper-edge: #e2d5b7;
       --ink-black: #1e1b18;
-      --ink-faded: #4a433b;
+      --ink-wet: #0e1d36;
       --ink-red: #a61c1c;
-      --ink-red-bright: #c81e1e;
-      --cover-cloth: #2a1815;
-      --cover-leather: #3d1e1a;
-      --brass-gold: #b58938;
+      --ink-red-wet: #6e0d0d;
+      --ink-gold: #b58938;
       --rule-blue: rgba(112, 138, 168, 0.22);
-      --margin-red: rgba(166, 28, 28, 0.28);
+      --margin-red: rgba(185, 65, 65, 0.34);
+      --cover-leather: #2a1815;
+      --cover-cloth: #3b221d;
     }
 
     * {
@@ -37,9 +39,9 @@
       background-image:
         radial-gradient(circle at 20% 20%, rgba(74, 42, 34, 0.35) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(45, 32, 24, 0.45) 0%, transparent 55%),
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 2px, transparent 2px, transparent 6px);
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 2px, transparent 2px, transparent 6px);
       color: var(--ink-black);
-      font-family: 'Crimson Pro', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -50,13 +52,19 @@
 
     /* Typography Utility Classes */
     .font-display {
-      font-family: 'Playfair Display', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
     }
     .font-serif-book {
-      font-family: 'Crimson Pro', Georgia, serif;
+      font-family: 'Cormorant Garamond', Georgia, serif;
     }
     .font-hand {
       font-family: 'Caveat', cursive;
+    }
+    .font-script {
+      font-family: 'Homemade Apple', cursive;
+    }
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
     }
 
     /* Hardcover Book Outer Binding */
@@ -72,7 +80,7 @@
       border: 1px solid #4e2a23;
       position: relative;
       width: 100%;
-      max-width: 1120px;
+      max-width: 1140px;
       transition: transform 0.3s ease;
     }
 
@@ -89,7 +97,6 @@
       border-radius: 8px;
       position: relative;
       box-shadow:
-        /* Right & bottom page thickness */
         3px 3px 0 #e6dac1,
         6px 6px 0 #d8c9aa,
         9px 9px 0 #cbb996,
@@ -101,11 +108,8 @@
     .paper-surface {
       background-color: var(--paper-cream);
       background-image:
-        /* Subtle paper grain & vignette */
-        radial-gradient(ellipse at center, rgba(255, 252, 245, 0.65) 0%, rgba(232, 219, 193, 0.55) 100%),
-        /* Vertical red margin line on desktop */
+        radial-gradient(ellipse at center, rgba(255, 252, 245, 0.68) 0%, rgba(232, 219, 193, 0.55) 100%),
         linear-gradient(90deg, transparent 54px, var(--margin-red) 54px, var(--margin-red) 55.5px, transparent 55.5px),
-        /* Faint ruled notebook lines */
         repeating-linear-gradient(
           to bottom,
           transparent 0px,
@@ -115,13 +119,13 @@
         );
       background-size: 100% 100%, 100% 100%, 100% 32px;
       position: relative;
-      min-height: 610px;
+      min-height: 620px;
     }
 
     @media (max-width: 640px) {
       .paper-surface {
         background-image:
-          radial-gradient(ellipse at center, rgba(255, 252, 245, 0.65) 0%, rgba(232, 219, 193, 0.55) 100%),
+          radial-gradient(ellipse at center, rgba(255, 252, 245, 0.68) 0%, rgba(232, 219, 193, 0.55) 100%),
           repeating-linear-gradient(
             to bottom,
             transparent 0px,
@@ -129,11 +133,11 @@
             var(--rule-blue) 31px,
             var(--rule-blue) 32px
           );
-        min-height: 640px;
+        min-height: 650px;
       }
     }
 
-    /* Center Book Spine / Gutter Shadow (visible on larger viewports) */
+    /* Center Book Spine / Gutter Shadow */
     .book-spine-shadow {
       pointer-events: none;
       position: absolute;
@@ -167,7 +171,7 @@
       filter: brightness(1.1);
     }
 
-    /* Page Turn & Fountain Pen Writing Animations */
+    /* Page Turn Transition */
     .slide-page {
       display: none;
       opacity: 0;
@@ -175,144 +179,153 @@
 
     .slide-page.active {
       display: block;
-      animation: pageTurnIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation: pageTurnIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     @keyframes pageTurnIn {
       0% {
         opacity: 0;
-        transform: perspective(1200px) rotateY(-6deg) translateX(14px);
-        filter: blur(1px);
+        transform: perspective(1200px) rotateY(-5deg) translateX(12px);
       }
       100% {
         opacity: 1;
         transform: perspective(1200px) rotateY(0deg) translateX(0);
-        filter: blur(0);
       }
     }
 
-    /* Ink Reveal Effect for Text Blocks */
-    .slide-page.active .ink-write {
+    /* Granular Character-by-Character Ink Reveal with Wet-Ink Sheen */
+    .ink-word {
+      display: inline-block;
+      white-space: pre;
+    }
+
+    .ink-char {
+      display: inline-block;
       opacity: 0;
-      animation: inkReveal 0.7s ease-out forwards;
-    }
-    .slide-page.active .ink-delay-1 { animation-delay: 0.12s; }
-    .slide-page.active .ink-delay-2 { animation-delay: 0.26s; }
-    .slide-page.active .ink-delay-3 { animation-delay: 0.42s; }
-    .slide-page.active .ink-delay-4 { animation-delay: 0.58s; }
-    .slide-page.active .ink-delay-5 { animation-delay: 0.74s; }
-
-    @keyframes inkReveal {
-      0% {
-        opacity: 0;
-        transform: translateY(6px);
-        clip-path: inset(0 100% 0 0);
-      }
-      40% {
-        opacity: 0.85;
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-        clip-path: inset(0 0% 0 0);
-      }
+      transform: translateY(1.5px) scale(0.96);
+      transition:
+        opacity 0.14s ease-out,
+        transform 0.18s ease-out,
+        color 0.45s ease-out,
+        text-shadow 0.45s ease-out;
     }
 
-    /* Animated SVG Fountain Pen Strokes */
-    .pen-stroke {
-      stroke-dasharray: 600;
-      stroke-dashoffset: 600;
+    .ink-char.wet {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      color: var(--ink-wet);
+      text-shadow: 0 0 1px rgba(14, 29, 54, 0.38);
     }
-    .slide-page.active .pen-stroke {
-      animation: drawInkStroke 1.15s cubic-bezier(0.35, 0, 0.25, 1) forwards;
-    }
-    .slide-page.active .pen-stroke-delay-1 { animation-delay: 0.35s; }
-    .slide-page.active .pen-stroke-delay-2 { animation-delay: 0.65s; }
-    .slide-page.active .pen-stroke-delay-3 { animation-delay: 0.9s; }
 
-    @keyframes drawInkStroke {
-      to {
-        stroke-dashoffset: 0;
-      }
+    .ink-char.wet-red {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      color: var(--ink-red-wet);
+      text-shadow: 0 0 1px rgba(110, 13, 13, 0.38);
+    }
+
+    .ink-char.dry {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* Container cards that gently settle in as the pen reaches them */
+    .ink-box {
+      opacity: 0.15;
+      transform: translateY(4px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .ink-box.inked {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* 3D-Shaded Gold-Nib Fountain Pen */
+    #active-pen {
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      pointer-events: none;
+      z-index: 50;
+      /* Nib tip sits at exact bottom-left corner (6px, 112px) of the 118x118 SVG */
+      transform-origin: 6px 112px;
+      will-change: transform, left, top, opacity;
+      transition: opacity 0.25s ease;
+      filter: drop-shadow(5px 9px 7px rgba(26, 17, 10, 0.34));
+    }
+
+    #active-pen .ink-drop-pulse {
+      animation: inkDropPulse 0.45s infinite alternate ease-in-out;
+    }
+    @keyframes inkDropPulse {
+      0% { transform: scale(0.85); opacity: 0.75; }
+      100% { transform: scale(1.25); opacity: 1; }
     }
 
     /* Handwritten Margin Callout Box */
     .margin-note {
-      background: rgba(255, 250, 238, 0.78);
-      border: 1.5px dashed rgba(166, 28, 28, 0.45);
+      background: rgba(255, 250, 238, 0.88);
+      border: 1.5px dashed rgba(166, 28, 28, 0.48);
       box-shadow: 2px 3px 8px rgba(45, 30, 15, 0.08);
-      transform: rotate(-1.1deg);
+      transform: rotate(-0.8deg);
       transition: transform 0.25s ease;
     }
     .margin-note:hover {
       transform: rotate(0deg) scale(1.01);
     }
 
-    /* Wax Seal / Rubber Stamp Animation */
+    /* Official Red-Ink Stamp */
     .official-stamp {
       border: 3px double var(--ink-red);
       color: var(--ink-red);
-      transform: rotate(-4deg) scale(1.4);
+      transform: rotate(-4deg) scale(1.45);
       opacity: 0;
       transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: inset 0 0 0 1px rgba(166, 28, 28, 0.3);
     }
     .official-stamp.stamped {
       transform: rotate(-3deg) scale(1);
-      opacity: 0.94;
+      opacity: 0.96;
     }
 
-    /* Interactive Signature Canvas */
+    /* Interactive Signature Pad */
     #signature-pad {
       touch-action: none;
       cursor: crosshair;
       background-image: linear-gradient(to bottom, transparent 84%, rgba(30, 27, 24, 0.25) 85%, transparent 86%);
-    }
-
-    /* Custom Scrollbar for inner content if needed */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: var(--paper-aged);
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #b8a686;
-      border-radius: 3px;
     }
   </style>
 </head>
 <body class="p-2 sm:p-4 md:p-6 select-none sm:select-auto">
 
   <!-- Top Ribbon Bookmark Navigation Bar -->
-  <nav aria-label="Chapter Bookmarks" class="w-full max-w-[1120px] flex flex-wrap items-end justify-between px-3 sm:px-6 mb-[-6px] z-20 gap-1">
+  <nav aria-label="Chapter Bookmarks" class="w-full max-w-[1140px] flex flex-wrap items-end justify-between px-3 sm:px-6 mb-[-6px] z-20 gap-1">
     <div class="flex items-end gap-1 sm:gap-1.5 overflow-x-auto pb-1 max-w-full">
-      <button onclick="goToSlide(0)" data-tab="0" class="bookmark-tab active bg-[#991b1b] text-[#fdf6e7] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(0)" data-tab="0" class="bookmark-tab active bg-[#991b1b] text-[#fdf6e7] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         I. Cover
       </button>
-      <button onclick="goToSlide(1)" data-tab="1" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(1)" data-tab="1" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         II. Chicago
       </button>
-      <button onclick="goToSlide(2)" data-tab="2" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(2)" data-tab="2" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         III. The Union
       </button>
-      <button onclick="goToSlide(3)" data-tab="3" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(3)" data-tab="3" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         IV. Shop Perks
       </button>
-      <button onclick="goToSlide(4)" data-tab="4" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(4)" data-tab="4" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         V. Card-Carrying
       </button>
-      <button onclick="goToSlide(5)" data-tab="5" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(5)" data-tab="5" class="bookmark-tab bg-[#3f2e26] text-[#f3e9d2] px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book font-semibold tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         VI. 501(c)(3) &amp; Adam
       </button>
-      <button onclick="goToSlide(6)" data-tab="6" class="bookmark-tab bg-[#b58938] text-[#1e1b18] font-semibold px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
+      <button onclick="goToSlide(6)" data-tab="6" class="bookmark-tab bg-[#b58938] text-[#1e1b18] font-bold px-2.5 sm:px-3.5 pt-1.5 pb-3 text-xs sm:text-sm font-serif-book tracking-wide shadow-md cursor-pointer whitespace-nowrap">
         VII. Sign-Off
       </button>
     </div>
 
     <div class="hidden md:flex items-center gap-2 text-[#d6c7ae] text-xs font-serif-book italic pb-2">
-      <span>Use ← → arrow keys or click pages to turn</span>
+      <span>← → arrows · Replay Pen anytime</span>
     </div>
   </nav>
 
@@ -325,18 +338,77 @@
     <div class="hidden sm:block pointer-events-none absolute bottom-0 right-0 w-7 h-7 border-b-2 border-r-2 border-[#b58938]/60 rounded-br-xl"></div>
 
     <div class="book-pages-stack">
-      <div class="paper-surface px-5 py-6 sm:pl-20 sm:pr-10 sm:py-8 md:py-10 flex flex-col justify-between">
+      <div id="paper-surface" class="paper-surface px-5 py-6 sm:pl-20 sm:pr-10 sm:py-8 md:py-9 flex flex-col justify-between">
+        <!-- 3D-Shaded Gold-Nib Fountain Pen (Nib Tip Precisely Anchored at Bottom-Left 6,112) -->
+        <div id="active-pen" aria-hidden="true" style="left: 72px; top: 82px; opacity: 0;">
+          <svg viewBox="0 0 118 118" fill="none" class="w-full h-full overflow-visible">
+            <defs>
+              <linearGradient id="barrelGrad" x1="25" y1="75" x2="105" y2="15" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#1e110e"/>
+                <stop offset="38%" stop-color="#58231d"/>
+                <stop offset="68%" stop-color="#331713"/>
+                <stop offset="100%" stop-color="#140b09"/>
+              </linearGradient>
+              <linearGradient id="goldNibGrad" x1="6" y1="112" x2="34" y2="84" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#f5d57a"/>
+                <stop offset="45%" stop-color="#c99635"/>
+                <stop offset="80%" stop-color="#8f6319"/>
+                <stop offset="100%" stop-color="#e8c15e"/>
+              </linearGradient>
+              <linearGradient id="collarGold" x1="24" y1="84" x2="36" y2="96" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#f2cf72"/>
+                <stop offset="50%" stop-color="#b58124"/>
+                <stop offset="100%" stop-color="#6e4b10"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Lacquered Burgundy & Ebony Fountain Pen Barrel -->
+            <path d="M31 79 L99 11 C104 6, 113 14, 108 19 L40 87 Z" fill="url(#barrelGrad)" stroke="#140c0a" stroke-width="1.3"/>
+            <!-- Barrel Specular Highlight -->
+            <path d="M36 77 L98 15" stroke="rgba(255,240,210,0.34)" stroke-width="2" stroke-linecap="round"/>
+            <!-- Gold Cap Clip -->
+            <path d="M77 33 L100 10 C103 8, 106 11, 103 14 L82 35" stroke="#d9aa48" stroke-width="2.2" stroke-linecap="round"/>
+
+            <!-- Triple Gold Section Rings -->
+            <path d="M27 83 L36 92 L41 87 L32 78 Z" fill="url(#collarGold)" stroke="#1e1508" stroke-width="1"/>
+            <line x1="29" y1="81" x2="38" y2="90" stroke="#3b2608" stroke-width="0.9"/>
+
+            <!-- Tapered Black Grip Section -->
+            <path d="M21 91 L28 84 L35 91 L28 98 Z" fill="#1c1917" stroke="#0f0d0c" stroke-width="1"/>
+
+            <!-- Sculpted 14K Gold Fountain Pen Nib -->
+            <path d="M6 112 L21 91 L28 98 L6 112 Z" fill="url(#goldNibGrad)" stroke="#241908" stroke-width="1.1" stroke-linejoin="round"/>
+            <!-- Nib Tine Slit & Breather Hole -->
+            <line x1="6" y1="112" x2="20.5" y2="97.5" stroke="#1e1406" stroke-width="1.05"/>
+            <circle cx="21" cy="97" r="1.4" fill="#1e1406"/>
+            <!-- Nib Scrollwork Engraving -->
+            <path d="M16 98 Q 20 96 22 100" stroke="#6e4b10" stroke-width="0.8" fill="none"/>
+
+            <!-- Live Wet-Ink Bead Right at the Nib Tip (6, 112) -->
+            <circle class="ink-drop-pulse" cx="6" cy="112" r="2.3" fill="#0e1d36"/>
+          </svg>
+        </div>
+
         <!-- Center Gutter Shadow on Desktop Spreads -->
         <div class="hidden lg:block book-spine-shadow"></div>
 
-        <!-- Running Book Header -->
-        <header class="flex flex-wrap items-center justify-between border-b border-[#1e1b18]/20 pb-2.5 mb-5 text-xs sm:text-sm text-[#4a433b] relative z-10">
+        <!-- Running Book Header & Sensory Controls -->
+        <header class="flex flex-wrap items-center justify-between border-b border-[#1e1b18]/20 pb-2.5 mb-5 text-xs sm:text-sm text-[#4a433b] relative z-10 gap-2">
           <div class="flex items-center gap-2">
             <span class="inline-block w-2 h-2 rounded-full bg-[#a61c1c]"></span>
-            <span class="uppercase tracking-widest font-semibold text-[11px] sm:text-xs">DSA Education Foundation · 501(c)(3)</span>
+            <span class="font-mono-code uppercase tracking-wider font-semibold text-[11px] sm:text-xs">DSA Education Foundation · 501(c)(3)</span>
           </div>
-          <div class="font-hand text-lg sm:text-xl text-[#a61c1c] font-bold">
-            Prepared expressly for Three Avenues Bookshop — Chicago, IL
+
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <button onclick="replayCurrentPage()" title="Watch the fountain pen write this page from scratch" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#1e1b18]/30 bg-[#fdf9f0] hover:bg-[#a61c1c] hover:text-[#f8f2e4] text-[#1e1b18] text-xs font-semibold transition-all cursor-pointer">
+              <span>✒ Replay Pen</span>
+            </button>
+            <button id="speed-toggle-btn" onclick="cycleInkSpeed()" title="Cycle writing speed: Deliberate, Brisk, or Instant" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#1e1b18]/30 bg-[#fdf9f0] hover:bg-[#1e1b18] hover:text-[#f8f2e4] text-[#1e1b18] text-xs font-semibold transition-all cursor-pointer">
+              <span>Pace: Deliberate (Slow)</span>
+            </button>
+            <button id="sound-toggle-btn" onclick="toggleInkSound()" title="Toggle subtle fountain pen scratch & paper rustle audio" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-[#1e1b18]/30 bg-[#fdf9f0] hover:bg-[#1e1b18] hover:text-[#f8f2e4] text-[#1e1b18] text-xs font-semibold transition-all cursor-pointer">
+              <span>🔇 Ink Sound: Off</span>
+            </button>
           </div>
         </header>
 
@@ -344,157 +416,184 @@
         <div id="slides-wrapper" class="relative z-10 flex-grow flex items-center">
 
           <!-- ========================================================= -->
-          <!-- SLIDE 1: COVER / TITLE PAGE                               -->
+          <!-- PAGE 1: COVER — A PROPOSAL IN SOLIDARITY                  -->
           <!-- ========================================================= -->
           <section class="slide-page active w-full" data-slide="0">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              <!-- Left Column: Literary Title Block -->
-              <div class="lg:col-span-7 space-y-4">
-                <div class="ink-write inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#a61c1c]/40 bg-[#a61c1c]/5 text-[#a61c1c] text-xs font-semibold uppercase tracking-widest">
-                  <span>Founding Partner Invitation</span>
-                  <span>•</span>
-                  <span>Chicago Network</span>
-                </div>
+              <!-- Left Column: Hand-Drawn Fountain Pen & Wreath Illustration -->
+              <div class="lg:col-span-5 flex flex-col items-center justify-center p-4 rounded-xl border border-[#1e1b18]/15 bg-[#fdf9f0]/75">
+                <svg class="w-56 h-56 sm:w-64 sm:h-64" viewBox="0 0 240 240" fill="none">
+                  <!-- Outer & Inner Wreath Circles -->
+                  <circle class="pen-stroke" cx="120" cy="120" r="96" stroke="#1e1b18" stroke-width="1.6" stroke-dasharray="4 3"/>
+                  <circle class="pen-stroke" cx="120" cy="120" r="86" stroke="#a61c1c" stroke-width="1.3"/>
 
-                <h1 class="ink-write ink-delay-1 font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[#1e1b18] leading-[1.08] tracking-tight">
-                  A Proposal in <span class="text-[#a61c1c] italic">Solidarity</span>
-                </h1>
+                  <!-- Botanical Laurel Leaves Left & Right -->
+                  <path class="pen-stroke" d="M56 172 C36 142, 36 96, 62 66" stroke="#1e1b18" stroke-width="2" stroke-linecap="round"/>
+                  <path class="pen-stroke" d="M184 172 C204 142, 204 96, 178 66" stroke="#1e1b18" stroke-width="2" stroke-linecap="round"/>
+                  <ellipse cx="46" cy="144" rx="7" ry="3.5" transform="rotate(-35 46 144)" fill="#a61c1c" opacity="0.75"/>
+                  <ellipse cx="41" cy="120" rx="7" ry="3.5" transform="rotate(-15 41 120)" fill="#a61c1c" opacity="0.75"/>
+                  <ellipse cx="46" cy="95" rx="7" ry="3.5" transform="rotate(15 46 95)" fill="#a61c1c" opacity="0.75"/>
+                  <ellipse cx="194" cy="144" rx="7" ry="3.5" transform="rotate(35 194 144)" fill="#a61c1c" opacity="0.75"/>
+                  <ellipse cx="199" cy="120" rx="7" ry="3.5" transform="rotate(15 199 120)" fill="#a61c1c" opacity="0.75"/>
+                  <ellipse cx="194" cy="95" rx="7" ry="3.5" transform="rotate(-15 194 95)" fill="#a61c1c" opacity="0.75"/>
 
-                <!-- Animated Fountain Pen Underline SVG -->
-                <svg class="w-64 sm:w-80 h-4 overflow-visible" viewBox="0 0 320 16" fill="none">
-                  <path class="pen-stroke pen-stroke-delay-1" d="M3 11 C 75 4, 195 14, 316 6" stroke="#a61c1c" stroke-width="3" stroke-linecap="round"/>
-                  <path class="pen-stroke pen-stroke-delay-2" d="M24 15 C 110 11, 210 15, 285 12" stroke="#1e1b18" stroke-width="1.3" stroke-linecap="round" opacity="0.6"/>
+                  <!-- Open Book Base -->
+                  <path class="pen-stroke" d="M62 152 Q91 142 120 154 Q149 142 178 152 L172 176 Q146 166 120 178 Q94 166 68 176 Z" fill="#efe6d1" stroke="#1e1b18" stroke-width="2"/>
+                  <line class="pen-stroke" x1="120" y1="154" x2="120" y2="178" stroke="#a61c1c" stroke-width="1.6"/>
+
+                  <!-- Classic Fountain Pen Nib Rising from the Book -->
+                  <path class="pen-stroke" d="M120 56 L144 114 L132 138 L108 138 L96 114 Z" fill="#f4ead2" stroke="#1e1b18" stroke-width="2.2" stroke-linejoin="round"/>
+                  <line class="pen-stroke" x1="120" y1="56" x2="120" y2="108" stroke="#a61c1c" stroke-width="2"/>
+                  <circle cx="120" cy="112" r="4" fill="#a61c1c"/>
+                  <rect x="106" y="138" width="28" height="8" rx="2" fill="#b58938" stroke="#1e1b18" stroke-width="1.6"/>
                 </svg>
 
-                <p class="ink-write ink-delay-2 text-lg sm:text-xl text-[#2d2722] leading-relaxed max-w-xl">
-                  An open letter from the <strong class="font-semibold">Democratic Socialists of America Education Foundation</strong> inviting <strong class="text-[#a61c1c] font-semibold">Three Avenues Bookshop</strong> to become a Founding Partner of the citywide <strong class="underline decoration-[#a61c1c]/50 underline-offset-4">Solidarity Book Club Union</strong>.
-                </p>
-
-                <div class="ink-write ink-delay-3 pt-2 flex flex-wrap items-center gap-4">
-                  <button onclick="nextSlide()" class="group inline-flex items-center gap-2.5 bg-[#1e1b18] hover:bg-[#a61c1c] text-[#f8f2e4] px-5 py-2.5 rounded-lg font-serif-book text-base sm:text-lg shadow-md transition-all cursor-pointer">
-                    <span>Open the First Chapter</span>
-                    <span class="transition-transform group-hover:translate-x-1">→</span>
-                  </button>
-                  <span class="font-hand text-2xl text-[#a61c1c] -rotate-2">
-                    "No dues. No bosses. Just great books &amp; good neighbors."
-                  </span>
-                </div>
+                <span class="font-mono-code text-[11px] uppercase tracking-[0.22em] text-[#5a5046] mt-1">
+                  Charter Proposal · Chicago, IL
+                </span>
               </div>
 
-              <!-- Right Column: Hand-Drawn Fountain Pen Emblem & Ex-Libris Plate -->
-              <div class="lg:col-span-5 flex flex-col items-center justify-center">
-                <div class="ink-write ink-delay-2 w-full max-w-sm border-2 border-[#1e1b18]/75 rounded-xl p-6 bg-[#fdf9f0]/80 shadow-inner relative">
-                  <!-- Decorative Ex-Libris Corner Marks -->
-                  <div class="text-center space-y-3">
-                    <p class="text-xs uppercase tracking-[0.25em] text-[#4a433b]">Ex Libris · Chicago</p>
-                    <h2 class="font-display text-2xl font-bold text-[#1e1b18]">Solidarity Book Club Union</h2>
+              <!-- Right Column: Cover Title & Founding Partner Invitation -->
+              <div class="lg:col-span-7 space-y-4">
+                <div data-write class="font-mono-code text-xs uppercase tracking-[0.2em] text-[#a61c1c] font-semibold">
+                  Democratic Socialists of America Education Foundation
+                </div>
 
-                    <!-- Custom Hand-Drawn SVG Rose + Open Book + Fountain Nib -->
-                    <svg class="w-40 h-36 mx-auto my-2" viewBox="0 0 180 150" fill="none">
-                      <!-- Open Book Pages -->
-                      <path class="pen-stroke" d="M25 105 Q 58 92 90 108 Q 122 92 155 105 L 150 124 Q 120 112 90 126 Q 60 112 30 124 Z" stroke="#1e1b18" stroke-width="2.2" fill="#f8f2e4"/>
-                      <path class="pen-stroke pen-stroke-delay-1" d="M90 108 L 90 126" stroke="#1e1b18" stroke-width="2"/>
-                      <path class="pen-stroke pen-stroke-delay-1" d="M40 111 Q 62 104 82 113" stroke="#1e1b18" stroke-width="1.2" opacity="0.6"/>
-                      <path class="pen-stroke pen-stroke-delay-1" d="M140 111 Q 118 104 98 113" stroke="#1e1b18" stroke-width="1.2" opacity="0.6"/>
+                <h1 data-write class="font-display text-4xl sm:text-5xl font-bold text-[#1e1b18] leading-tight">
+                  A Proposal in Solidarity
+                </h1>
 
-                      <!-- Stem & Leaves Rising from Book -->
-                      <path class="pen-stroke pen-stroke-delay-1" d="M90 104 C 89 82, 92 68, 90 48" stroke="#1e1b18" stroke-width="2.2" stroke-linecap="round"/>
-                      <path class="pen-stroke pen-stroke-delay-2" d="M90 82 C 74 78, 67 68, 75 63 C 83 60, 88 72, 90 82 Z" stroke="#1e1b18" stroke-width="1.8" fill="#efe6d1"/>
-                      <path class="pen-stroke pen-stroke-delay-2" d="M90 73 C 106 69, 113 59, 105 54 C 97 51, 92 63, 90 73 Z" stroke="#1e1b18" stroke-width="1.8" fill="#efe6d1"/>
+                <p data-write class="font-script text-lg sm:text-xl text-[#a61c1c] pt-1">
+                  For Three Avenues Bookshop
+                </p>
 
-                      <!-- Socialist Rose Blossom in Red Ink -->
-                      <path class="pen-stroke pen-stroke-delay-2" d="M90 22 C 76 22, 70 35, 78 46 C 84 53, 96 53, 102 46 C 110 35, 104 22, 90 22 Z" stroke="#a61c1c" stroke-width="2.4" fill="rgba(166,28,28,0.1)"/>
-                      <path class="pen-stroke pen-stroke-delay-3" d="M82 34 C 85 27, 96 27, 98 35 C 99 42, 87 44, 85 37 C 84 33, 91 31, 93 35" stroke="#a61c1c" stroke-width="2" stroke-linecap="round"/>
+                <p data-write class="text-lg sm:text-xl text-[#26211d] leading-relaxed">
+                  We are weaving together a citywide network of solidarity book clubs across Chicago—and we want <strong class="text-[#a61c1c]">Three Avenues Bookshop</strong> at the table from day one as a <strong>Founding Partner</strong> of the <em>Solidarity Book Club Union</em>.
+                </p>
 
-                      <!-- Four-Point Chicago Star Accents -->
-                      <polygon points="42,42 44,48 50,50 44,52 42,58 40,52 34,50 40,48" fill="#a61c1c" opacity="0.85"/>
-                      <polygon points="138,42 140,48 146,50 140,52 138,58 136,52 130,50 136,48" fill="#a61c1c" opacity="0.85"/>
-                    </svg>
-
-                    <div class="border-t border-[#1e1b18]/25 pt-3 text-sm text-[#3a332c]">
-                      <p class="font-semibold">Three Avenues Bookshop</p>
-                      <p class="italic text-xs text-[#5a5046]">× DSA Education Foundation</p>
-                    </div>
-                  </div>
+                <div class="pt-2 flex flex-wrap items-center gap-3">
+                  <button onclick="nextSlide()" class="bg-[#a61c1c] hover:bg-[#881616] text-[#f8f2e4] px-5 py-2.5 rounded-lg font-display font-bold text-base sm:text-lg shadow-md transition-all cursor-pointer">
+                    Open Chapter I →
+                  </button>
+                  <span data-write class="font-hand text-xl sm:text-2xl text-[#4a433b]">
+                    (Zero dues · Pure solidarity · Real 501(c)(3) muscle)
+                  </span>
                 </div>
               </div>
             </div>
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 2: THE CHICAGO LANDSCAPE (THE SPARK)                -->
+          <!-- PAGE 2: THE CHICAGO LANDSCAPE (CLEAN TRANSIT CONSTELLATION) -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="1">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div class="lg:col-span-7 space-y-4">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
+              <div class="lg:col-span-6 space-y-4">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
                   Chapter I · The Spark Across Chicago
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] leading-tight">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] leading-tight">
                   Solidarity Book Clubs Are Blooming Everywhere.
                 </h2>
-                <p class="ink-write ink-delay-2 text-lg text-[#26211d] leading-relaxed">
+                <p data-write class="text-lg text-[#26211d] leading-relaxed">
                   Across Chicago—from neighborhood cafes to independent bookshops—people are hungry to read together, wrestle with big ideas, and build real community offline.
                 </p>
-                <p class="ink-write ink-delay-3 text-lg text-[#26211d] leading-relaxed">
-                  <strong class="text-[#a61c1c]">Three Avenues Bookshop</strong> is already doing the real work with your <em class="font-semibold">Solidarity Book Club</em>. Right now, dozens of these incredible clubs exist across the city—but mostly in isolated silos.
+                <p data-write class="text-lg text-[#26211d] leading-relaxed">
+                  <strong class="text-[#a61c1c]">Three Avenues Bookshop</strong> is already doing the real work on Southport with your <em class="font-semibold">Solidarity Book Club</em>. Right now, dozens of these clubs exist across the city—but mostly in isolated silos.
                 </p>
 
-                <div class="ink-write ink-delay-4 p-4 rounded-lg bg-[#efe6d1]/90 border-l-4 border-[#a61c1c] space-y-1">
-                  <p class="font-semibold text-[#1e1b18] text-base sm:text-lg">Our Simple Idea:</p>
-                  <p class="text-[#362f29] text-base">
-                    Instead of every shop and organizer reinventing the wheel alone, let’s link Chicago’s solidarity book clubs together into a federated network—with <strong>Three Avenues Bookshop</strong> at the table as a <span class="text-[#a61c1c] font-semibold">Founding Partner</span>.
+                <div class="ink-box p-4 rounded-lg bg-[#efe6d1]/90 border-l-4 border-[#a61c1c] space-y-1">
+                  <p data-write class="font-bold text-[#1e1b18] text-base sm:text-lg">Our Simple Idea:</p>
+                  <p data-write class="text-[#362f29] text-base sm:text-lg">
+                    Instead of every shop and organizer reinventing the wheel alone, let’s link Chicago’s solidarity book clubs into one federated network—with <strong>Three Avenues Bookshop</strong> as a <span class="text-[#a61c1c] font-bold">Founding Partner</span>.
                   </p>
                 </div>
               </div>
 
-              <!-- Right Side: Hand-drawn Constellation Sketch of Chicago Book Clubs -->
-              <div class="lg:col-span-5 space-y-4">
-                <div class="ink-write ink-delay-2 border border-[#1e1b18]/25 rounded-xl p-5 bg-[#fdf9f0]/75">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="font-hand text-2xl text-[#a61c1c] font-bold">From Silos → A Citywide Constellation</span>
+              <!-- Right Side: Spacious, Non-Overlapping Chicago Solidarity Reading Line -->
+              <div class="lg:col-span-6 space-y-3.5">
+                <div class="ink-box border-2 border-[#1e1b18]/25 rounded-xl p-4 sm:p-5 bg-[#fdf9f0]/95 shadow-sm">
+                  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#1e1b18]/15 pb-2 mb-3">
+                    <span data-write class="font-hand text-2xl text-[#a61c1c] font-bold">Chicago Solidarity Reading Line</span>
+                    <span class="font-mono-code text-[10px] uppercase tracking-wider text-[#5a5046] font-semibold">Click any stop</span>
                   </div>
 
-                  <svg class="w-full h-52" viewBox="0 0 320 200" fill="none">
-                    <!-- Connecting Red Ink Threads -->
-                    <path class="pen-stroke pen-stroke-delay-1" d="M160 95 L 70 48" stroke="#a61c1c" stroke-width="2" stroke-dasharray="5 4"/>
-                    <path class="pen-stroke pen-stroke-delay-1" d="M160 95 L 252 46" stroke="#a61c1c" stroke-width="2" stroke-dasharray="5 4"/>
-                    <path class="pen-stroke pen-stroke-delay-2" d="M160 95 L 68 152" stroke="#a61c1c" stroke-width="2" stroke-dasharray="5 4"/>
-                    <path class="pen-stroke pen-stroke-delay-2" d="M160 95 L 254 150" stroke="#a61c1c" stroke-width="2" stroke-dasharray="5 4"/>
-                    <path class="pen-stroke pen-stroke-delay-3" d="M70 48 Q 160 22 252 46" stroke="#1e1b18" stroke-width="1.2" opacity="0.45"/>
-                    <path class="pen-stroke pen-stroke-delay-3" d="M68 152 Q 160 180 254 150" stroke="#1e1b18" stroke-width="1.2" opacity="0.45"/>
+                  <!-- Clean SVG Transit Diagram with Ample Spacing & Zero Overlapping Text -->
+                  <svg class="w-full h-56 sm:h-60" viewBox="0 0 440 240" fill="none">
+                    <!-- Lake Michigan Shoreline on Far Right -->
+                    <path class="pen-stroke" d="M394 12 Q 382 120 408 228" stroke="#708aa8" stroke-width="2" stroke-dasharray="4 4" opacity="0.55"/>
+                    <text x="422" y="120" font-family="Cormorant Garamond, serif" font-style="italic" font-size="12" fill="#5e7691" transform="rotate(90 422 120)" text-anchor="middle">Lake Michigan</text>
 
-                    <!-- Center Hub: Three Avenues -->
-                    <circle cx="160" cy="95" r="36" fill="#f8f2e4" stroke="#a61c1c" stroke-width="2.5"/>
-                    <text x="160" y="91" text-anchor="middle" font-family="Crimson Pro, serif" font-weight="700" font-size="11.5" fill="#1e1b18">Three Avenues</text>
-                    <text x="160" y="105" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="13" fill="#a61c1c">Founding Hub</text>
+                    <!-- Transit Spokes from Three Avenues Anchor (220, 120) -->
+                    <line class="pen-stroke" x1="220" y1="120" x2="285" y2="38" stroke="#a61c1c" stroke-width="2.4" stroke-linecap="round"/>
+                    <line class="pen-stroke" x1="220" y1="120" x2="112" y2="44" stroke="#a61c1c" stroke-width="2.4" stroke-linecap="round"/>
+                    <line class="pen-stroke" x1="220" y1="120" x2="86" y2="120" stroke="#a61c1c" stroke-width="2.4" stroke-linecap="round"/>
+                    <line class="pen-stroke" x1="220" y1="120" x2="120" y2="196" stroke="#a61c1c" stroke-width="2.4" stroke-linecap="round"/>
+                    <line class="pen-stroke" x1="220" y1="120" x2="300" y2="196" stroke="#a61c1c" stroke-width="2.4" stroke-linecap="round"/>
 
-                    <!-- Satellite Clubs -->
-                    <g>
-                      <circle cx="70" cy="48" r="24" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.6"/>
-                      <text x="70" y="46" text-anchor="middle" font-family="Crimson Pro, serif" font-size="10" fill="#1e1b18">North Side</text>
-                      <text x="70" y="57" text-anchor="middle" font-family="Crimson Pro, serif" font-size="9" fill="#4a433b">Reading Circle</text>
+                    <!-- Outer Ring Dashed Arcs -->
+                    <path class="pen-stroke" d="M112 44 Q 198 16 285 38" stroke="#1e1b18" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4"/>
+                    <path class="pen-stroke" d="M120 196 Q 210 224 300 196" stroke="#1e1b18" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.4"/>
+
+                    <!-- Stop 1: Rogers Park (Top Right) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Rogers Park', 'Far North Side reading circles & campus study groups')">
+                      <circle cx="285" cy="38" r="8" fill="#f8f2e4" stroke="#1e1b18" stroke-width="2.2"/>
+                      <rect x="298" y="22" width="84" height="32" rx="6" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.2"/>
+                      <text x="340" y="36" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="12" fill="#1e1b18">Rogers Park</text>
+                      <text x="340" y="48" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">North Side</text>
                     </g>
-                    <g>
-                      <circle cx="252" cy="46" r="24" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.6"/>
-                      <text x="252" y="44" text-anchor="middle" font-family="Crimson Pro, serif" font-size="10" fill="#1e1b18">West Side</text>
-                      <text x="252" y="55" text-anchor="middle" font-family="Crimson Pro, serif" font-size="9" fill="#4a433b">Theory Group</text>
+
+                    <!-- Stop 2: Lincoln Square (Top Left) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Lincoln Square', 'Neighboring indie bookshop & cafe discussion nights')">
+                      <circle cx="112" cy="44" r="8" fill="#f8f2e4" stroke="#1e1b18" stroke-width="2.2"/>
+                      <rect x="12" y="28" width="88" height="32" rx="6" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.2"/>
+                      <text x="56" y="42" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="12" fill="#1e1b18">Lincoln Square</text>
+                      <text x="56" y="54" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">Brown Line</text>
                     </g>
-                    <g>
-                      <circle cx="68" cy="152" r="24" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.6"/>
-                      <text x="68" y="150" text-anchor="middle" font-family="Crimson Pro, serif" font-size="10" fill="#1e1b18">South Side</text>
-                      <text x="68" y="161" text-anchor="middle" font-family="Crimson Pro, serif" font-size="9" fill="#4a433b">Solidarity Club</text>
+
+                    <!-- Stop 3: Logan Square (Middle Left) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Logan Square', 'High-energy evening theory & labor history clubs')">
+                      <circle cx="86" cy="120" r="8" fill="#f8f2e4" stroke="#1e1b18" stroke-width="2.2"/>
+                      <rect x="6" y="104" width="68" height="32" rx="6" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.2"/>
+                      <text x="40" y="118" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="11.5" fill="#1e1b18">Logan Sq.</text>
+                      <text x="40" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">Blue Line</text>
                     </g>
-                    <g>
-                      <circle cx="254" cy="150" r="24" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.6"/>
-                      <text x="254" y="148" text-anchor="middle" font-family="Crimson Pro, serif" font-size="10" fill="#1e1b18">Neighborhood</text>
-                      <text x="254" y="159" text-anchor="middle" font-family="Crimson Pro, serif" font-size="9" fill="#4a433b">Indie Shops</text>
+
+                    <!-- Stop 4: Pilsen (Bottom Left) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Pilsen', 'Bilingual organizing & community history circles')">
+                      <circle cx="120" cy="196" r="8" fill="#f8f2e4" stroke="#1e1b18" stroke-width="2.2"/>
+                      <rect x="24" y="180" width="84" height="32" rx="6" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.2"/>
+                      <text x="66" y="194" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="12" fill="#1e1b18">Pilsen</text>
+                      <text x="66" y="206" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">Pink Line</text>
+                    </g>
+
+                    <!-- Stop 5: Hyde Park (Bottom Right) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Hyde Park', 'South Side political economy & neighborhood salons')">
+                      <circle cx="300" cy="196" r="8" fill="#f8f2e4" stroke="#1e1b18" stroke-width="2.2"/>
+                      <rect x="312" y="180" width="84" height="32" rx="6" fill="#efe6d1" stroke="#1e1b18" stroke-width="1.2"/>
+                      <text x="354" y="194" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="12" fill="#1e1b18">Hyde Park</text>
+                      <text x="354" y="206" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">South Side</text>
+                    </g>
+
+                    <!-- Center Founding Hub: Three Avenues Bookshop (Lakeview / Southport) -->
+                    <g class="cursor-pointer" onclick="highlightNeighborhood('Lakeview · Three Avenues Bookshop', 'Founding Partner Anchor Hub on Southport Corridor!')">
+                      <circle class="pen-stroke" cx="220" cy="120" r="50" fill="#f8f2e4" stroke="#a61c1c" stroke-width="2.8"/>
+                      <circle cx="220" cy="120" r="44" fill="none" stroke="#a61c1c" stroke-width="0.9" stroke-dasharray="3 2"/>
+                      <text x="220" y="109" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="13" fill="#1e1b18">Three Avenues</text>
+                      <text x="220" y="123" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#4a433b">Lakeview / Southport</text>
+                      <text x="220" y="139" text-anchor="middle" font-family="Caveat, cursive" font-weight="700" font-size="14.5" fill="#a61c1c">★ Founding Hub</text>
                     </g>
                   </svg>
+
+                  <!-- Clean Dedicated Readout Bar Below Map -->
+                  <div id="neighborhood-readout" class="mt-2 px-3.5 py-2 rounded-lg bg-[#efe6d1]/85 border border-[#1e1b18]/15 flex flex-wrap items-center justify-between gap-2 text-sm">
+                    <span class="font-bold text-[#a61c1c]">Lakeview · Three Avenues Bookshop:</span>
+                    <span class="text-[#2d2722]">Founding Partner Anchor Hub on Southport Corridor!</span>
+                  </div>
                 </div>
 
-                <div class="margin-note p-3.5 rounded-lg">
-                  <p class="font-hand text-xl sm:text-2xl text-[#1e1b18] leading-snug">
+                <div class="ink-box margin-note p-3.5 rounded-lg">
+                  <p data-write class="font-hand text-xl sm:text-2xl text-[#1e1b18] leading-snug">
                     <span class="text-[#a61c1c] font-bold">Margin Note:</span> You keep 100% of your shop’s identity, book picks, and vibe. We’re building the connective tissue between clubs!
                   </p>
                 </div>
@@ -503,84 +602,80 @@
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 3: WHAT THE UNION DOES (SHARED STRENGTH)            -->
+          <!-- PAGE 3: SHARED STRENGTH                                   -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="2">
             <div class="space-y-6">
               <div class="max-w-2xl">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
                   Chapter II · Shared Strength
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] mt-1">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] mt-1">
                   Why Form a Book Club Union?
                 </h2>
-                <p class="ink-write ink-delay-2 text-lg text-[#362f29] mt-1">
-                  When readers and facilitators across Chicago share notes, every single club gets richer, livelier, and easier to run.
+                <p data-write class="text-lg sm:text-xl text-[#362f29] mt-1">
+                  When readers and facilitators across Chicago share notes, every single club gets richer, livelier, and easier to run—without anyone reinventing the wheel.
                 </p>
               </div>
 
-              <!-- Three Core Pillars Cards -->
               <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <!-- Pillar 1 -->
-                <div class="ink-write ink-delay-2 rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/85 p-5 shadow-sm flex flex-col justify-between">
+                <div class="ink-box rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/90 p-5 shadow-sm flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
                       <span class="font-hand text-3xl font-bold text-[#a61c1c]">01.</span>
-                      <!-- Question Mark & Bookmark SVG -->
                       <svg class="w-8 h-8" viewBox="0 0 36 36" fill="none">
                         <path class="pen-stroke" d="M8 6 H28 V30 L18 24 L8 30 Z" stroke="#1e1b18" stroke-width="2" fill="#efe6d1"/>
-                        <path class="pen-stroke pen-stroke-delay-1" d="M15 13 C15 10, 21 10, 21 14 C21 16, 18 17, 18 19" stroke="#a61c1c" stroke-width="2" stroke-linecap="round"/>
+                        <path class="pen-stroke" d="M15 13 C15 10, 21 10, 21 14 C21 16, 18 17, 18 19" stroke="#a61c1c" stroke-width="2" stroke-linecap="round"/>
                         <circle cx="18" cy="22" r="1.2" fill="#a61c1c"/>
                       </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share Discussion Questions</h3>
-                    <p class="text-base text-[#362f29] leading-relaxed">
+                    <h3 data-write class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share Discussion Questions</h3>
+                    <p data-write class="text-base sm:text-lg text-[#362f29] leading-relaxed">
                       Swap curated reading guides, facilitator prompts, and chapter breakdowns that actually spark great conversation—so hosts aren’t writing study guides from scratch at midnight.
                     </p>
                   </div>
-                  <div class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-lg text-[#a61c1c]">
+                  <div data-write class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-xl text-[#a61c1c]">
                     “What question got the whole room talking?”
                   </div>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="ink-write ink-delay-3 rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/85 p-5 shadow-sm flex flex-col justify-between">
+                <div class="ink-box rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/90 p-5 shadow-sm flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
                       <span class="font-hand text-3xl font-bold text-[#a61c1c]">02.</span>
-                      <!-- Compass / Best Practices SVG -->
                       <svg class="w-8 h-8" viewBox="0 0 36 36" fill="none">
                         <circle class="pen-stroke" cx="18" cy="18" r="13" stroke="#1e1b18" stroke-width="2" fill="#efe6d1"/>
-                        <polygon class="pen-stroke pen-stroke-delay-1" points="18,9 21,18 18,27 15,18" stroke="#a61c1c" stroke-width="1.8" fill="rgba(166,28,28,0.18)"/>
+                        <polygon class="pen-stroke" points="18,9 21,18 18,27 15,18" stroke="#a61c1c" stroke-width="1.8" fill="rgba(166,28,28,0.18)"/>
                       </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share Best Practices</h3>
-                    <p class="text-base text-[#362f29] leading-relaxed">
-                      Trade real-world playbooks on pacing, turning one-time attendees into regulars, handling big turnouts, and pairing book nights with local community action.
+                    <h3 data-write class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share Best Practices</h3>
+                    <p data-write class="text-base sm:text-lg text-[#362f29] leading-relaxed">
+                      Trade real-world playbooks on pacing, turning first-timers into regulars, handling big turnouts, and pairing book nights with local community action.
                     </p>
                   </div>
-                  <div class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-lg text-[#a61c1c]">
+                  <div data-write class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-xl text-[#a61c1c]">
                     Learn from dozens of Chicago hosts
                   </div>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="ink-write ink-delay-4 rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/85 p-5 shadow-sm flex flex-col justify-between">
+                <div class="ink-box rounded-xl border border-[#1e1b18]/25 bg-[#fdf9f0]/90 p-5 shadow-sm flex flex-col justify-between">
                   <div>
                     <div class="flex items-center justify-between mb-3">
                       <span class="font-hand text-3xl font-bold text-[#a61c1c]">03.</span>
-                      <!-- Interlocking Circles SVG -->
                       <svg class="w-8 h-8" viewBox="0 0 36 36" fill="none">
                         <circle class="pen-stroke" cx="14" cy="18" r="8" stroke="#1e1b18" stroke-width="2"/>
-                        <circle class="pen-stroke pen-stroke-delay-1" cx="22" cy="18" r="8" stroke="#a61c1c" stroke-width="2"/>
+                        <circle class="pen-stroke" cx="22" cy="18" r="8" stroke="#a61c1c" stroke-width="2"/>
                       </svg>
                     </div>
-                    <h3 class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share People &amp; Readers</h3>
-                    <p class="text-base text-[#362f29] leading-relaxed">
-                      Cross-pollinate attendees across neighborhoods! If a reader loves a Tuesday discussion across town, they’ll discover Three Avenues’ upcoming selections—and bring friends through your doors.
+                    <h3 data-write class="font-display text-xl font-bold text-[#1e1b18] mb-2">Share People &amp; Readers</h3>
+                    <p data-write class="text-base sm:text-lg text-[#362f29] leading-relaxed">
+                      Cross-pollinate attendees across neighborhoods! If a reader loves a Tuesday discussion across town, they’ll discover Three Avenues’ upcoming picks—and bring friends through your doors.
                     </p>
                   </div>
-                  <div class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-lg text-[#a61c1c]">
+                  <div data-write class="mt-4 pt-2 border-t border-[#1e1b18]/15 font-hand text-xl text-[#a61c1c]">
                     More readers discovering Three Avenues
                   </div>
                 </div>
@@ -589,58 +684,54 @@
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 4: FOUNDING PARTNER PERKS (PART 1: OPS & COMMUNITY) -->
+          <!-- PAGE 4: SHOP OPERATIONS & PERKS                           -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="3">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
               <div class="lg:col-span-7 space-y-4">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
                   Chapter III · Founding Partner Benefits (Part 1)
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
                   We Handle the Digital Heavy Lifting.
                 </h2>
-                <p class="ink-write ink-delay-2 text-base sm:text-lg text-[#362f29]">
+                <p data-write class="text-lg text-[#362f29]">
                   Running an indie bookshop takes everything you’ve got. As a Founding Partner, our team takes community logistics off your plate:
                 </p>
 
-                <!-- Benefit List -->
                 <div class="space-y-3.5 pt-1">
-                  <!-- Perk A: Slack / Discord -->
-                  <div class="ink-write ink-delay-2 p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
+                  <div class="ink-box p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
                     <div class="flex items-start gap-3">
                       <span class="mt-1 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#a61c1c] text-[#f8f2e4] font-bold text-sm shrink-0">✓</span>
                       <div>
-                        <h3 class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">
+                        <h3 data-write class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">
                           Managed Slack Channel <span class="text-sm font-serif-book font-normal italic text-[#5a5046]">(or Discord, if members prefer)</span>
                         </h3>
-                        <p class="text-base text-[#362f29] mt-1 leading-relaxed">
+                        <p data-write class="text-base text-[#362f29] mt-1 leading-relaxed">
                           We set up, organize, and moderate a dedicated digital home for your club. For Three Avenues, <strong>Slack is almost certainly the sweet spot</strong>—since your customers are already logged into Slack all day through their jobs!
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Perk B: Active Calendar Management -->
-                  <div class="ink-write ink-delay-3 p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
+                  <div class="ink-box p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
                     <div class="flex items-start gap-3">
                       <span class="mt-1 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#a61c1c] text-[#f8f2e4] font-bold text-sm shrink-0">✓</span>
                       <div>
-                        <h3 class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">Active Calendar Management</h3>
-                        <p class="text-base text-[#362f29] mt-1 leading-relaxed">
+                        <h3 data-write class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">Active Calendar Management</h3>
+                        <p data-write class="text-base text-[#362f29] mt-1 leading-relaxed">
                           We maintain, sync, and update your book club dates across the shared citywide calendar so readers never miss a meeting or book release window.
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Perk C: Free Cross-Shop Advertising -->
-                  <div class="ink-write ink-delay-4 p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
+                  <div class="ink-box p-4 rounded-xl bg-[#fdf9f0]/90 border border-[#1e1b18]/20 shadow-sm">
                     <div class="flex items-start gap-3">
                       <span class="mt-1 inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#a61c1c] text-[#f8f2e4] font-bold text-sm shrink-0">✓</span>
                       <div>
-                        <h3 class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">Free Advertising Across Like-Minded Shops</h3>
-                        <p class="text-base text-[#362f29] mt-1 leading-relaxed">
+                        <h3 data-write class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">Free Advertising Across Like-Minded Shops</h3>
+                        <p data-write class="text-base text-[#362f29] mt-1 leading-relaxed">
                           Organic cross-promotion in partner shops, reading lists, and community spaces across Chicago—putting Three Avenues in front of people who actually buy physical books.
                         </p>
                       </div>
@@ -651,9 +742,9 @@
 
               <!-- Right Side: Interactive Slack vs Discord Toggle Preview -->
               <div class="lg:col-span-5">
-                <div class="ink-write ink-delay-3 rounded-xl border-2 border-[#1e1b18]/30 bg-[#efe6d1]/95 p-5 shadow-md space-y-4">
-                  <div class="flex items-center justify-between border-b border-[#1e1b18]/20 pb-2.5">
-                    <span class="font-hand text-2xl font-bold text-[#a61c1c]">Your Club’s Digital Lounge</span>
+                <div class="ink-box rounded-xl border-2 border-[#1e1b18]/30 bg-[#efe6d1]/95 p-5 shadow-md space-y-4">
+                  <div class="flex flex-wrap items-center justify-between gap-2 border-b border-[#1e1b18]/20 pb-2.5">
+                    <span data-write class="font-hand text-2xl font-bold text-[#a61c1c]">Your Club’s Digital Lounge</span>
                     <div class="inline-flex rounded-lg border border-[#1e1b18]/30 overflow-hidden text-xs font-semibold">
                       <button id="btn-slack" onclick="togglePlatform('slack')" class="px-2.5 py-1 bg-[#1e1b18] text-[#f8f2e4] cursor-pointer">Slack (Recommended)</button>
                       <button id="btn-discord" onclick="togglePlatform('discord')" class="px-2.5 py-1 bg-transparent text-[#1e1b18] cursor-pointer">Discord</button>
@@ -662,19 +753,19 @@
 
                   <div id="platform-preview" class="space-y-2.5 text-sm">
                     <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-                      <p class="font-bold text-[#1e1b18]">#three-avenues-book-club</p>
+                      <p class="font-mono-code font-bold text-[#1e1b18]">#three-avenues-book-club</p>
                       <p class="text-xs text-[#4a433b] mt-0.5">Managed by DSA Ed Foundation volunteers · Zero moderation headache for your staff</p>
                     </div>
                     <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-                      <p class="font-semibold text-[#a61c1c]">Why Slack fits Three Avenues:</p>
-                      <p class="text-sm text-[#2c2621] mt-1">
+                      <p class="font-bold text-[#a61c1c]">Why Slack fits Three Avenues:</p>
+                      <p class="text-base text-[#2c2621] mt-1">
                         Your neighborhood readers already have Slack open on their laptops and phones during the workday—meaning one click to RSVP, grab the book from your shop, and jump into chapter threads!
                       </p>
                     </div>
                   </div>
 
                   <div class="margin-note p-3 rounded-lg">
-                    <p class="font-hand text-xl text-[#1e1b18]">
+                    <p data-write class="font-hand text-xl text-[#1e1b18]">
                       ★ Plus: Every event link points straight back to <span class="text-[#a61c1c] font-bold">Three Avenues Bookshop</span> to pick up the book!
                     </p>
                   </div>
@@ -684,76 +775,74 @@
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 5: FOUNDING PARTNER PERKS (PART 2: CARD-CARRYING)   -->
+          <!-- PAGE 5: CARD-CARRYING SOLIDARITY                          -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="4">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div class="lg:col-span-6 space-y-4">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
                   Chapter IV · Founding Partner Benefits (Part 2)
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
                   Become an Official “Card-Carrying” Member.
                 </h2>
-                <p class="ink-write ink-delay-2 text-lg text-[#2d2722] leading-relaxed">
+                <p data-write class="text-lg text-[#2d2722] leading-relaxed">
                   If you really want—and we hope you do—we’ll literally print and issue Three Avenues Bookshop an official <strong>Card-Carrying Founding Member</strong> credential for the Solidarity Book Club Union.
                 </p>
-                <p class="ink-write ink-delay-3 text-lg text-[#2d2722] leading-relaxed">
+                <p data-write class="text-lg text-[#2d2722] leading-relaxed">
                   You’ll also get access to a growing slate of citywide networking opportunities: joint author talks, cross-store reading crawls, shared speaker budgets, and collaborative salon nights.
                 </p>
 
-                <div class="ink-write ink-delay-4 p-4 rounded-xl bg-[#fdf9f0]/85 border border-dashed border-[#a61c1c]/50">
-                  <p class="font-hand text-2xl text-[#a61c1c] font-bold">Co-Authoring the Vision:</p>
-                  <p class="text-base text-[#362f29] mt-1">
+                <div class="ink-box p-4 rounded-xl bg-[#fdf9f0]/85 border border-dashed border-[#a61c1c]/50">
+                  <p data-write class="font-hand text-2xl text-[#a61c1c] font-bold">Co-Authoring the Vision:</p>
+                  <p data-write class="text-base sm:text-lg text-[#362f29] mt-1">
                     We’re still actively fleshing out all the network perks—and as a Founding Partner, Three Avenues helps shape what this union becomes from day one.
                   </p>
                 </div>
               </div>
 
-              <!-- Right Column: Interactive Vintage Union Membership Card Artifact -->
+              <!-- Right Column: Custom Union Membership Card Artifact -->
               <div class="lg:col-span-6 flex flex-col items-center">
-                <div class="ink-write ink-delay-2 w-full max-w-md rounded-xl border-2 border-[#1e1b18] bg-[#f4ead2] p-5 sm:p-6 shadow-xl relative overflow-hidden">
-                  <!-- Subtle Guilloche / Vintage Border Accent -->
+                <div class="ink-box w-full max-w-md rounded-xl border-2 border-[#1e1b18] bg-[#f4ead2] p-5 sm:p-6 shadow-xl relative overflow-hidden">
                   <div class="border border-[#a61c1c]/60 rounded-lg p-4 space-y-3 relative">
                     <div class="flex items-center justify-between border-b-2 border-[#1e1b18] pb-2">
                       <div>
-                        <p class="text-[10px] uppercase tracking-[0.22em] text-[#a61c1c] font-bold">Local No. 001 · Chicago, Illinois</p>
-                        <h3 class="font-display text-xl sm:text-2xl font-extrabold text-[#1e1b18] tracking-tight">UNION MEMBERSHIP CARD</h3>
+                        <p class="font-mono-code text-[10px] uppercase tracking-[0.18em] text-[#a61c1c] font-semibold">Local No. 001 · Chicago, Illinois</p>
+                        <h3 class="font-display text-xl sm:text-2xl font-bold text-[#1e1b18] tracking-tight">UNION MEMBERSHIP CARD</h3>
                       </div>
-                      <!-- Small Rose Icon -->
                       <svg class="w-9 h-9 shrink-0" viewBox="0 0 40 40" fill="none">
-                        <circle cx="20" cy="20" r="17" stroke="#a61c1c" stroke-width="1.8" fill="rgba(166,28,28,0.08)"/>
-                        <path d="M20 11 C14 11, 12 17, 15 21 C18 24, 22 24, 25 21 C28 17, 26 11, 20 11 Z" stroke="#a61c1c" stroke-width="1.8"/>
-                        <path d="M20 24 L20 31" stroke="#1e1b18" stroke-width="1.8"/>
+                        <circle class="pen-stroke" cx="20" cy="20" r="17" stroke="#a61c1c" stroke-width="1.8" fill="rgba(166,28,28,0.08)"/>
+                        <path class="pen-stroke" d="M20 11 C14 11, 12 17, 15 21 C18 24, 22 24, 25 21 C28 17, 26 11, 20 11 Z" stroke="#a61c1c" stroke-width="1.8"/>
+                        <path class="pen-stroke" d="M20 24 L20 31" stroke="#1e1b18" stroke-width="1.8"/>
                       </svg>
                     </div>
 
                     <div class="grid grid-cols-2 gap-3 text-sm pt-1">
                       <div>
-                        <span class="block text-[11px] uppercase tracking-wider text-[#5a5046]">Issued To</span>
-                        <span class="font-display font-bold text-base text-[#1e1b18]">Three Avenues Bookshop</span>
+                        <span class="block font-mono-code text-[10px] uppercase tracking-wider text-[#5a5046]">Issued To</span>
+                        <span class="font-display font-bold text-base sm:text-lg text-[#1e1b18]">Three Avenues Bookshop</span>
                       </div>
                       <div>
-                        <span class="block text-[11px] uppercase tracking-wider text-[#5a5046]">Standing</span>
+                        <span class="block font-mono-code text-[10px] uppercase tracking-wider text-[#5a5046]">Standing</span>
                         <span class="font-hand text-xl font-bold text-[#a61c1c]">Founding Partner ★</span>
                       </div>
                       <div>
-                        <span class="block text-[11px] uppercase tracking-wider text-[#5a5046]">Chartered By</span>
-                        <span class="font-semibold text-[#1e1b18]">DSA Education Foundation</span>
+                        <span class="block font-mono-code text-[10px] uppercase tracking-wider text-[#5a5046]">Chartered By</span>
+                        <span class="font-bold text-[#1e1b18]">DSA Education Foundation</span>
                       </div>
                       <div>
-                        <span class="block text-[11px] uppercase tracking-wider text-[#5a5046]">Monthly Dues</span>
-                        <span class="font-bold text-[#1e1b18]">$0.00 (Pure Solidarity)</span>
+                        <span class="block font-mono-code text-[10px] uppercase tracking-wider text-[#5a5046]">Monthly Dues</span>
+                        <span class="font-mono-code font-bold text-[#1e1b18]">$0.00 (Solidarity)</span>
                       </div>
                     </div>
 
                     <div class="pt-3 border-t border-[#1e1b18]/25 flex items-center justify-between">
-                      <span class="font-hand text-lg text-[#4a433b]">“An injury to one is a good book unread.”</span>
-                      <span class="px-2 py-0.5 border border-[#a61c1c] text-[#a61c1c] text-[10px] font-bold uppercase tracking-widest rounded">Charter #01</span>
+                      <span data-write class="font-hand text-lg text-[#4a433b]">“An injury to one is a good book unread.”</span>
+                      <span class="px-2 py-0.5 border border-[#a61c1c] text-[#a61c1c] font-mono-code text-[10px] font-bold uppercase tracking-widest rounded">Charter #01</span>
                     </div>
                   </div>
                 </div>
-                <p class="font-hand text-xl text-[#4a433b] mt-2.5 text-center">
+                <p data-write class="font-hand text-xl text-[#4a433b] mt-2.5 text-center">
                   ↑ Custom-printed card ready for your shop wall or counter!
                 </p>
               </div>
@@ -761,54 +850,73 @@
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 6: ZERO DUES, REAL 501(c)(3) MUSCLE & ADAM          -->
+          <!-- PAGE 6: ZERO DUES, 501(c)(3) MUSCLE & ADAM                -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="5">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-start">
-              <!-- Left Column: Solidarity & 501(c)(3) Structure -->
-              <div class="lg:col-span-7 space-y-4">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              <!-- Left Column: Solidarity, 501(c)(3) & POS Integration -->
+              <div class="lg:col-span-6 space-y-3.5">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
                   Chapter V · Solidarity, Not Fees
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18]">
                   We Don’t Want Your Money. <span class="text-[#a61c1c] italic">Seriously.</span>
                 </h2>
-                <p class="ink-write ink-delay-2 text-lg text-[#26211d] leading-relaxed">
+                <p data-write class="text-base sm:text-lg text-[#26211d] leading-relaxed">
                   Let’s be crystal clear: <strong>this costs Three Avenues Bookshop zero dollars.</strong> This is solidarity, not a SaaS subscription or a pay-to-play trade group. We just want to connect good people doing like-minded work across Chicago.
                 </p>
 
-                <div class="ink-write ink-delay-3 p-4 sm:p-5 rounded-xl bg-[#fdf9f0]/90 border-2 border-[#1e1b18]/25 space-y-2 shadow-sm">
+                <div class="ink-box p-4 rounded-xl bg-[#fdf9f0]/95 border-2 border-[#1e1b18]/25 space-y-2 shadow-sm">
                   <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-0.5 rounded bg-[#a61c1c] text-[#f8f2e4] text-xs font-bold uppercase tracking-wider">501(c)(3) Power</span>
-                    <h3 class="font-display text-xl font-bold text-[#1e1b18]">In-Store Donation &amp; Fundraiser Partnerships</h3>
+                    <span class="px-2.5 py-0.5 rounded bg-[#a61c1c] text-[#f8f2e4] font-mono-code text-xs font-bold uppercase tracking-wider">501(c)(3) Power</span>
+                    <h3 data-write class="font-display text-lg sm:text-xl font-bold text-[#1e1b18]">In-Store Donation &amp; POS Integration</h3>
                   </div>
-                  <p class="text-base text-[#2d2722] leading-relaxed">
-                    Because the <strong>DSA Education Foundation</strong> is a registered <strong>501(c)(3)</strong> nonprofit, if Three Avenues ever wants to run donation drives, book-aid campaigns, or community charity programs inside your shop, we can partner with you—handling the nonprofit compliance so your shop/program <strong>keeps almost all of the money</strong>!
+                  <p data-write class="text-base text-[#2d2722] leading-relaxed">
+                    Because the <strong>DSA Education Foundation</strong> is a registered <strong>501(c)(3)</strong> nonprofit, if you ever want to run donation programs in your shop, we’ll partner with you and let you <strong>keep almost all of the money</strong>!
+                  </p>
+                  <p data-write class="text-base text-[#2d2722] leading-relaxed border-t border-[#1e1b18]/15 pt-2">
+                    Even better: we will <strong>integrate everything directly into whatever Point of Sale (POS) system you choose</strong>, so there is <strong>zero additional work for you</strong>—just a bit of extra funding to fix that broken toilet handle you’ve been meaning to fix…
                   </p>
                 </div>
               </div>
 
-              <!-- Right Column: Handwritten Margin Callout about Adam the Former CPA -->
-              <div class="lg:col-span-5 flex flex-col justify-center pt-1 lg:pt-4">
-                <div class="ink-write ink-delay-3 margin-note p-5 sm:p-6 rounded-xl relative">
-                  <!-- Hand-drawn Paperclip / Pin SVG -->
+              <!-- Right Column: Expanded Handwritten Margin Notebook Section for Adam -->
+              <div class="lg:col-span-6 flex flex-col justify-center">
+                <div class="ink-box margin-note p-4 sm:p-5 rounded-xl relative">
+                  <!-- Hand-drawn Paperclip SVG -->
                   <svg class="w-8 h-8 absolute -top-4 right-5 text-[#a61c1c]" viewBox="0 0 32 32" fill="none">
-                    <path d="M12 8 V22 C12 25.5 17 25.5 17 22 V7 C17 3 10 3 10 7 V21" stroke="#a61c1c" stroke-width="2.2" stroke-linecap="round"/>
+                    <path class="pen-stroke" d="M12 8 V22 C12 25.5 17 25.5 17 22 V7 C17 3 10 3 10 7 V21" stroke="#a61c1c" stroke-width="2.2" stroke-linecap="round"/>
                   </svg>
 
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="font-hand text-2xl sm:text-3xl font-bold text-[#a61c1c]">Meet Adam (Our Main Crazy Person)</span>
+                  <div class="flex items-center justify-between gap-2 mb-2">
+                    <span data-write class="font-hand text-2xl sm:text-3xl font-bold text-[#a61c1c]">Meet Adam (Our Main Crazy Person)</span>
+                    <!-- Charming Hand-Drawn Wobbly Toilet Handle Doodle -->
+                    <svg class="w-14 h-11 shrink-0" viewBox="0 0 58 44" fill="none" title="For that broken toilet handle you've been meaning to fix">
+                      <rect class="pen-stroke" x="14" y="6" width="26" height="24" rx="3" stroke="#1e1b18" stroke-width="1.6" fill="#f8f2e4"/>
+                      <circle cx="20" cy="14" r="2.2" fill="#a61c1c"/>
+                      <!-- Drooping wobbly lever handle -->
+                      <path class="pen-stroke" d="M20 14 L 5 24" stroke="#a61c1c" stroke-width="2.5" stroke-linecap="round"/>
+                      <path class="pen-stroke" d="M4 18 Q 1 21 4 25" stroke="#1e1b18" stroke-width="1.1" stroke-dasharray="2 2"/>
+                      <text x="43" y="17" font-family="Caveat, cursive" font-size="11" fill="#a61c1c" font-weight="700">jiggle</text>
+                      <text x="43" y="27" font-family="Caveat, cursive" font-size="11" fill="#1e1b18">handle!</text>
+                    </svg>
                   </div>
 
-                  <p class="font-hand text-xl sm:text-2xl text-[#1e1b18] leading-snug space-y-2">
-                    <span class="block">• <strong>Former CPA.</strong> Knows every IRS &amp; 501(c)(3) rule inside and out.</span>
-                    <span class="block">• <strong>Philosophically skeptical:</strong> He disagrees with a whole lot of those rules…</span>
-                    <span class="block">• <strong>Pragmatic organizer:</strong> …but he also realizes we live in the real world—so we might as well <em>play the game we live in</em> and use every legal tool available to help independent community spaces win!</span>
-                  </p>
+                  <div class="font-hand text-lg sm:text-xl text-[#1e1b18] leading-snug space-y-2">
+                    <p data-write>
+                      • <strong>Former CPA:</strong> Knows all the IRS &amp; 501(c)(3) rules. He disagrees with a lot of them, <em>but</em> realizes we live in the real world—so might as well <strong>play the game we live in</strong> so independent shops win!
+                    </p>
+                    <p data-write>
+                      • <strong>Point of Sale (POS) Systems Expert:</strong> He used to work <em>in</em> them, <em>with</em> them, and <em>for</em> them. He’ll wire everything straight into whatever POS you choose with zero extra counter work.
+                    </p>
+                    <p data-write class="bg-[#f8f2e4]/95 px-2.5 py-1.5 rounded border border-[#a61c1c]/30 text-[#2c221e]">
+                      <span class="text-[#a61c1c] font-bold">Off the record:</span> (Toast is the best ’cause they party the hardest at the annual McCormick Place conference—but we don’t have to get into that now.)
+                    </p>
+                  </div>
 
-                  <div class="mt-4 pt-2.5 border-t border-[#a61c1c]/30 flex items-center justify-between font-hand text-lg text-[#4a433b]">
-                    <span>— Verified by DSA Ed Foundation</span>
-                    <span class="text-[#a61c1c] font-bold">100% Above-Board ✓</span>
+                  <div class="mt-3 pt-2 border-t border-[#a61c1c]/30 flex items-center justify-between font-hand text-base sm:text-lg text-[#4a433b]">
+                    <span>— Zero extra work · Just toilet-handle money</span>
+                    <span class="text-[#a61c1c] font-bold">100% Legit ✓</span>
                   </div>
                 </div>
               </div>
@@ -816,71 +924,84 @@
           </section>
 
           <!-- ========================================================= -->
-          <!-- SLIDE 7: THE INVITATION / INTERACTIVE SIGN-OFF PAGE       -->
+          <!-- PAGE 7: SIGN THE FOUNDING LEDGER -> EMAIL ADAM            -->
           <!-- ========================================================= -->
           <section class="slide-page w-full" data-slide="6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-7 items-center">
               <!-- Left Column: Closing Appeal -->
-              <div class="lg:col-span-6 space-y-4">
-                <div class="ink-write text-xs uppercase tracking-widest text-[#a61c1c] font-bold">
-                  Chapter VI · The Next Page
+              <div class="lg:col-span-6 space-y-3.5">
+                <div data-write class="font-mono-code text-xs uppercase tracking-widest text-[#a61c1c] font-semibold">
+                  Chapter VI · Sign the Founding Ledger
                 </div>
-                <h2 class="ink-write ink-delay-1 font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] leading-tight">
+                <h2 data-write class="font-display text-3xl sm:text-4xl font-bold text-[#1e1b18] leading-tight">
                   Let’s Write the Next Chapter Together.
                 </h2>
-                <p class="ink-write ink-delay-2 text-lg text-[#26211d] leading-relaxed">
-                  Three Avenues Bookshop has already built something special with your Solidarity Book Club. We’d be honored to have you stand with us as a <strong>Founding Partner</strong> as we weave Chicago’s independent reading communities together.
+                <p data-write class="text-lg text-[#26211d] leading-relaxed">
+                  Three Avenues Bookshop has already built something special with your Solidarity Book Club. Sign with your finger or mouse on the charter ledger to seal your spot as a <strong>Founding Partner</strong>!
                 </p>
 
-                <ul class="ink-write ink-delay-3 space-y-2 text-base text-[#2c2621]">
+                <ul class="space-y-1.5 text-base text-[#2c2621]">
                   <li class="flex items-center gap-2">
                     <span class="text-[#a61c1c] font-bold">✦</span>
-                    <span>Managed Slack channel &amp; calendar sync ready whenever you say go</span>
+                    <span data-write>Managed Slack channel &amp; calendar sync ready whenever you say go</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-[#a61c1c] font-bold">✦</span>
-                    <span>Citywide cross-promotion &amp; shared discussion guides</span>
+                    <span data-write>Zero-work POS integration + 501(c)(3) donation muscle (for that toilet handle!)</span>
                   </li>
                   <li class="flex items-center gap-2">
                     <span class="text-[#a61c1c] font-bold">✦</span>
-                    <span>Zero dues, 501(c)(3) fundraiser muscle, and a custom union card</span>
+                    <span data-write>Zero dues, citywide bookshop promo, and a custom union card</span>
                   </li>
                 </ul>
 
-                <div class="ink-write ink-delay-4 pt-2 flex flex-wrap items-center gap-3">
-                  <button id="stamp-partner-btn" onclick="applyFoundingStamp()" class="bg-[#a61c1c] hover:bg-[#881616] text-[#f8f2e4] px-5 py-3 rounded-lg font-display font-bold text-base sm:text-lg shadow-md transition-all cursor-pointer">
-                    ✒ Ink “Count Us In” Stamp
+                <div class="pt-1 flex flex-wrap items-center gap-2.5">
+                  <button id="send-email-btn" onclick="sendSignatureToAdam(true)" class="bg-[#a61c1c] hover:bg-[#881616] text-[#f8f2e4] px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg font-display font-bold text-base shadow-md transition-all cursor-pointer">
+                    ✉ Send Signature to Adam
                   </button>
-                  <button onclick="clearSignaturePad()" class="border border-[#1e1b18]/40 hover:bg-[#1e1b18]/10 text-[#1e1b18] px-3.5 py-2.5 rounded-lg text-sm font-semibold transition-all cursor-pointer">
-                    Clear Pen Signature
+                  <button onclick="applyFoundingStamp()" class="border border-[#a61c1c] text-[#a61c1c] hover:bg-[#a61c1c]/10 px-3.5 py-2.5 rounded-lg text-sm font-bold transition-all cursor-pointer">
+                    ✒ Stamp Ledger
+                  </button>
+                  <button onclick="clearSignaturePad()" class="border border-[#1e1b18]/35 hover:bg-[#1e1b18]/10 text-[#1e1b18] px-3 py-2.5 rounded-lg text-sm font-bold transition-all cursor-pointer">
+                    Clear
                   </button>
                 </div>
               </div>
 
-              <!-- Right Column: Interactive Fountain Pen Signature Pad & Official Stamp -->
+              <!-- Right Column: Interactive Fountain Pen Signature Pad & Personal Email Note -->
               <div class="lg:col-span-6">
-                <div class="ink-write ink-delay-2 rounded-xl border-2 border-[#1e1b18]/35 bg-[#fdf9f0] p-5 shadow-md relative">
-                  <div class="flex items-center justify-between mb-2">
-                    <span class="font-display font-bold text-base sm:text-lg text-[#1e1b18]">Founding Partner Charter Ledger</span>
-                    <span class="font-hand text-xl text-[#a61c1c]">Sign with your mouse or finger ↓</span>
+                <div class="ink-box rounded-xl border-2 border-[#1e1b18]/35 bg-[#fdf9f0] p-4 sm:p-5 shadow-md relative">
+                  <div class="flex flex-wrap items-center justify-between gap-1 mb-2">
+                    <span data-write class="font-display font-bold text-base sm:text-lg text-[#1e1b18]">Founding Partner Charter Ledger</span>
+                    <span class="font-hand text-xl text-[#a61c1c] font-bold">Sign with your finger — auto-opens email! ↓</span>
                   </div>
 
                   <!-- Interactive Canvas for Fountain Pen Signature -->
                   <div class="relative rounded-lg border border-[#1e1b18]/25 bg-[#f8f2e4] overflow-hidden">
-                    <canvas id="signature-pad" class="w-full h-40 block"></canvas>
+                    <canvas id="signature-pad" class="w-full h-36 sm:h-40 block"></canvas>
 
                     <!-- Official Red Ink Stamp Overlay -->
-                    <div id="founding-stamp" class="official-stamp pointer-events-none absolute top-3 right-3 px-3 py-1.5 rounded bg-[#f8f2e4]/90 text-center">
-                      <p class="text-[10px] font-bold tracking-[0.2em] uppercase">Solidarity Book Club Union</p>
-                      <p class="font-display font-extrabold text-sm sm:text-base tracking-wide">FOUNDING PARTNER</p>
+                    <div id="founding-stamp" class="official-stamp pointer-events-none absolute top-3 right-3 px-3 py-1.5 rounded bg-[#f8f2e4]/95 text-center">
+                      <p class="font-mono-code text-[9px] font-bold tracking-[0.16em] uppercase">Solidarity Book Club Union</p>
+                      <p class="font-display font-bold text-sm sm:text-base tracking-wide">COUNT US IN — FOUNDING PARTNER</p>
                       <p class="font-hand text-base font-bold leading-none">Three Avenues Bookshop · Chicago</p>
                     </div>
                   </div>
 
-                  <div class="mt-3 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-[#4a433b]">
-                    <span><strong>DSA Education Foundation</strong> · 501(c)(3)</span>
+                  <!-- Handwritten Personal Email Callout Directly Beneath Signature Box -->
+                  <div class="mt-3 p-3 rounded-lg bg-[#efe6d1]/95 border border-dashed border-[#a61c1c]/55 text-[#1e1b18] leading-snug">
+                    <p class="font-mono-code text-xs font-semibold text-[#a61c1c]">
+                      ✉ To: <span class="underline">therealadamcornelius@gmail.com</span>
+                    </p>
+                    <p data-write class="font-hand text-xl sm:text-2xl text-[#1e1b18] mt-1">
+                      “YES, Adam is giving you his personal email. ’Cause that’s how not-corporate he wants this to be. It’s just solidarity, yo.”
+                    </p>
+                  </div>
+
+                  <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm text-[#4a433b]">
+                    <span class="font-mono-code text-[11px]"><strong>DSA Ed Foundation</strong> · 501(c)(3)</span>
                     <span id="status-message" class="font-hand text-lg sm:text-xl text-[#a61c1c] font-bold">
-                      Ready to grab coffee &amp; launch!
+                      Sign above with your finger to launch email!
                     </span>
                   </div>
                 </div>
@@ -892,7 +1013,7 @@
 
         <!-- Book Footer & Page Turn Controls -->
         <footer class="border-t border-[#1e1b18]/20 pt-3.5 mt-6 flex flex-wrap items-center justify-between gap-3 relative z-10">
-          <button id="prev-btn" onclick="prevSlide()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#1e1b18]/35 text-[#1e1b18] hover:bg-[#1e1b18] hover:text-[#f8f2e4] disabled:opacity-35 disabled:pointer-events-none font-serif-book font-semibold text-sm sm:text-base transition-all cursor-pointer">
+          <button id="prev-btn" onclick="prevSlide()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#1e1b18]/35 text-[#1e1b18] hover:bg-[#1e1b18] hover:text-[#f8f2e4] disabled:opacity-35 disabled:pointer-events-none font-serif-book font-bold text-sm sm:text-base transition-all cursor-pointer">
             <span>←</span>
             <span>Previous Page</span>
           </button>
@@ -905,7 +1026,7 @@
             </span>
           </div>
 
-          <button id="next-btn" onclick="nextSlide()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b18] hover:bg-[#a61c1c] text-[#f8f2e4] disabled:opacity-35 disabled:pointer-events-none font-serif-book font-semibold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
+          <button id="next-btn" onclick="nextSlide()" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1e1b18] hover:bg-[#a61c1c] text-[#f8f2e4] disabled:opacity-35 disabled:pointer-events-none font-serif-book font-bold text-sm sm:text-base shadow-sm transition-all cursor-pointer">
             <span>Next Page</span>
             <span>→</span>
           </button>
@@ -922,8 +1043,8 @@
       "Shared Strength & The Union",
       "Founding Perks: Slack, Calendar & Promo",
       "Founding Perks: Card-Carrying Solidarity",
-      "Zero Dues & 501(c)(3) Muscle",
-      "Sign-Off & Charter Ledger"
+      "Zero Dues, 501(c)(3) & POS Muscle",
+      "Sign the Founding Ledger"
     ];
 
     let currentSlide = 0;
@@ -934,6 +1055,467 @@
     const nextBtn = document.getElementById('next-btn');
     const pageCounter = document.getElementById('page-counter');
     const pageDotsContainer = document.getElementById('page-dots');
+    const activePenEl = document.getElementById('active-pen');
+    const paperSurfaceEl = document.getElementById('paper-surface');
+
+    // =========================================================
+    // WEB AUDIO API: SUBTLE FOUNTAIN PEN SCRATCH & PAGE RUSTLE
+    // =========================================================
+    let inkSoundEnabled = false;
+    let audioCtx = null;
+    let lastScratchTime = 0;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playPageTurnSound() {
+      if (!inkSoundEnabled) return;
+      initAudio();
+      if (!audioCtx) return;
+
+      const duration = 0.24;
+      const bufferSize = Math.floor(audioCtx.sampleRate * duration);
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.sin((i / bufferSize) * Math.PI);
+      }
+
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.setValueAtTime(1100, audioCtx.currentTime);
+      filter.Q.value = 1.4;
+
+      const gain = audioCtx.createGain();
+      gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+      noise.start();
+    }
+
+    function playNibScratch(durationSec = 0.06) {
+      if (!inkSoundEnabled) return;
+      const now = performance.now();
+      if (now - lastScratchTime < 75) return;
+      lastScratchTime = now;
+
+      initAudio();
+      if (!audioCtx) return;
+
+      const bufferSize = Math.floor(audioCtx.sampleRate * durationSec);
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
+      }
+
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = buffer;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(2600, audioCtx.currentTime);
+
+      const gain = audioCtx.createGain();
+      gain.gain.setValueAtTime(0.018, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0005, audioCtx.currentTime + durationSec);
+
+      noise.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+      noise.start();
+    }
+
+    function toggleInkSound() {
+      inkSoundEnabled = !inkSoundEnabled;
+      const btn = document.getElementById('sound-toggle-btn');
+      if (inkSoundEnabled) {
+        initAudio();
+        playNibScratch(0.14);
+        btn.textContent = '🔊 Ink Sound: On';
+        btn.classList.add('bg-[#1e1b18]', 'text-[#f8f2e4]');
+      } else {
+        btn.textContent = '🔇 Ink Sound: Off';
+        btn.classList.remove('bg-[#1e1b18]', 'text-[#f8f2e4]');
+      }
+    }
+
+    // =========================================================
+    // GRANULAR CHARACTER-BY-CHARACTER & SVG PATH FOUNTAIN PEN ENGINE
+    // =========================================================
+    const SPEED_MODES = [
+      { id: 'deliberate', label: 'Pace: Deliberate (Slow)', charMs: 44, lineLiftMs: 190, blockPauseMs: 320, svgMs: 1150 },
+      { id: 'brisk', label: 'Pace: Brisk', charMs: 18, lineLiftMs: 70, blockPauseMs: 120, svgMs: 520 },
+      { id: 'instant', label: 'Pace: Instant', charMs: 0, lineLiftMs: 0, blockPauseMs: 0, svgMs: 0 }
+    ];
+    let speedIndex = 0;
+    let activeWriteRaf = null;
+    let dryTimers = [];
+
+    // Split every [data-write] element into individual character spans while preserving inline tags (<strong>, <em>, <span>)
+    function prepareHandwritingSpans() {
+      document.querySelectorAll('[data-write]').forEach(el => {
+        if (el.dataset.prepared === 'true') return;
+        el.dataset.prepared = 'true';
+
+        function wrapNode(node, isRed) {
+          if (node.nodeType === Node.TEXT_NODE) {
+            const raw = node.textContent;
+            if (!raw) return document.createDocumentFragment();
+            const frag = document.createDocumentFragment();
+            // Split into word tokens and whitespace tokens so line-wrapping stays natural
+            const tokens = raw.split(/(\s+)/);
+            tokens.forEach(token => {
+              if (!token) return;
+              if (/^\s+$/.test(token)) {
+                const spaceSpan = document.createElement('span');
+                spaceSpan.className = 'ink-char';
+                spaceSpan.textContent = ' ';
+                if (isRed) spaceSpan.dataset.red = '1';
+                frag.appendChild(spaceSpan);
+              } else {
+                const wordWrap = document.createElement('span');
+                wordWrap.className = 'ink-word';
+                for (const ch of token) {
+                  const charSpan = document.createElement('span');
+                  charSpan.className = 'ink-char';
+                  charSpan.textContent = ch;
+                  if (isRed) charSpan.dataset.red = '1';
+                  wordWrap.appendChild(charSpan);
+                }
+                frag.appendChild(wordWrap);
+              }
+            });
+            return frag;
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            const childIsRed = isRed || (node.className && typeof node.className === 'string' && node.className.includes('text-[#a61c1c]'));
+            const children = Array.from(node.childNodes);
+            children.forEach(child => {
+              const replaced = wrapNode(child, childIsRed);
+              node.replaceChild(replaced, child);
+            });
+            return node;
+          }
+          return node;
+        }
+
+        const rootIsRed = el.className && typeof el.className === 'string' && el.className.includes('text-[#a61c1c]');
+        Array.from(el.childNodes).forEach(child => {
+          const replaced = wrapNode(child, rootIsRed);
+          el.replaceChild(replaced, child);
+        });
+      });
+    }
+
+    function stopActiveWriting() {
+      if (activeWriteRaf) {
+        cancelAnimationFrame(activeWriteRaf);
+        activeWriteRaf = null;
+      }
+      dryTimers.forEach(t => clearTimeout(t));
+      dryTimers = [];
+      if (activePenEl) {
+        activePenEl.style.opacity = '0';
+      }
+    }
+
+    function positionPenAt(x, y, angleDeg = 0, scale = 1) {
+      if (!activePenEl) return;
+      activePenEl.style.opacity = '1';
+      // Nib tip is anchored at (6px, 112px) inside the 118x118 SVG
+      activePenEl.style.left = `${x - 6}px`;
+      activePenEl.style.top = `${y - 112}px`;
+      activePenEl.style.transform = `rotate(${angleDeg.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+    }
+
+    function runHandwritingOnCurrentSlide() {
+      stopActiveWriting();
+      const activeSlide = slides[currentSlide];
+      if (!activeSlide || !paperSurfaceEl) return;
+
+      const mode = SPEED_MODES[speedIndex];
+      const allChars = Array.from(activeSlide.querySelectorAll('.ink-char'));
+      const allBoxes = Array.from(activeSlide.querySelectorAll('.ink-box'));
+      const allStrokes = Array.from(activeSlide.querySelectorAll('.pen-stroke'));
+
+      // Reset all strokes, boxes, and characters on the active slide
+      allBoxes.forEach(box => box.classList.remove('inked'));
+      allChars.forEach(ch => {
+        ch.classList.remove('wet', 'wet-red', 'dry');
+      });
+
+      allStrokes.forEach(stroke => {
+        let len = 300;
+        try {
+          if (typeof stroke.getTotalLength === 'function') {
+            len = stroke.getTotalLength();
+          }
+        } catch (e) {}
+        stroke.dataset.pathLen = len;
+        stroke.style.strokeDasharray = `${len}`;
+        stroke.style.strokeDashoffset = `${len}`;
+      });
+
+      // Instant mode: show everything immediately
+      if (mode.id === 'instant') {
+        allBoxes.forEach(box => box.classList.add('inked'));
+        allChars.forEach(ch => ch.classList.add('dry'));
+        allStrokes.forEach(stroke => {
+          stroke.style.strokeDashoffset = '0';
+        });
+        return;
+      }
+
+      // Build ordered sequence of tasks: SVG illustrations + [data-write] text blocks in reading order
+      const sequenceItems = [];
+      const svgContainers = Array.from(activeSlide.querySelectorAll('svg'));
+      const writeBlocks = Array.from(activeSlide.querySelectorAll('[data-write]'));
+
+      // On Cover (Slide 0), draw the emblem first, then write the title & pitch
+      // On other slides, write the header & intro first, then draw diagrams, then remaining notes
+      const orderedNodes = [];
+      if (currentSlide === 0) {
+        svgContainers.forEach(s => orderedNodes.push({ type: 'svg', el: s }));
+        writeBlocks.forEach(w => orderedNodes.push({ type: 'write', el: w }));
+      } else {
+        writeBlocks.slice(0, 3).forEach(w => orderedNodes.push({ type: 'write', el: w }));
+        svgContainers.forEach(s => orderedNodes.push({ type: 'svg', el: s }));
+        writeBlocks.slice(3).forEach(w => orderedNodes.push({ type: 'write', el: w }));
+      }
+
+      orderedNodes.forEach(item => {
+        if (item.type === 'svg') {
+          const strokes = Array.from(item.el.querySelectorAll('.pen-stroke'));
+          strokes.forEach(stroke => {
+            sequenceItems.push({
+              kind: 'stroke',
+              stroke,
+              duration: mode.svgMs
+            });
+          });
+        } else {
+          const parentBox = item.el.closest('.ink-box');
+          const chars = Array.from(item.el.querySelectorAll('.ink-char'));
+          if (chars.length > 0) {
+            sequenceItems.push({
+              kind: 'text',
+              el: item.el,
+              parentBox,
+              chars
+            });
+          }
+        }
+      });
+
+      if (sequenceItems.length === 0) {
+        allBoxes.forEach(box => box.classList.add('inked'));
+        return;
+      }
+
+      let itemIdx = 0;
+      let charIdx = 0;
+      let strokeStartTime = null;
+      let pauseUntil = performance.now() + 260;
+      let prevLineTop = null;
+      let prevPenX = null;
+      let prevPenY = null;
+
+      // Smooth pen lift transition state (when moving from end of one line to start of next line)
+      let liftAnim = null;
+
+      function revealCharacter(ch) {
+        const isRed = ch.dataset.red === '1';
+        ch.classList.add(isRed ? 'wet-red' : 'wet');
+        const t = setTimeout(() => {
+          ch.classList.remove('wet', 'wet-red');
+          ch.classList.add('dry');
+        }, 360);
+        dryTimers.push(t);
+      }
+
+      function step(now) {
+        const paperRect = paperSurfaceEl.getBoundingClientRect();
+
+        // Handle smooth pen-lift glide between lines or blocks
+        if (liftAnim) {
+          const p = Math.min(1, (now - liftAnim.start) / liftAnim.duration);
+          const ease = 1 - Math.pow(1 - p, 3);
+          const curX = liftAnim.fromX + (liftAnim.toX - liftAnim.fromX) * ease;
+          const curY = liftAnim.fromY + (liftAnim.toY - liftAnim.fromY) * ease - Math.sin(p * Math.PI) * 14;
+          const liftTilt = -8 * Math.sin(p * Math.PI);
+          const liftScale = 1 + 0.05 * Math.sin(p * Math.PI);
+          positionPenAt(curX, curY, liftTilt, liftScale);
+          if (p >= 1) {
+            liftAnim = null;
+          } else {
+            activeWriteRaf = requestAnimationFrame(step);
+            return;
+          }
+        }
+
+        if (now < pauseUntil) {
+          activeWriteRaf = requestAnimationFrame(step);
+          return;
+        }
+
+        if (itemIdx >= sequenceItems.length) {
+          // Reveal any remaining boxes and smoothly lift pen off the page
+          allBoxes.forEach(box => box.classList.add('inked'));
+          if (activePenEl) {
+            activePenEl.style.opacity = '0';
+          }
+          activeWriteRaf = null;
+          return;
+        }
+
+        const currentItem = sequenceItems[itemIdx];
+
+        if (currentItem.kind === 'stroke') {
+          const parentBox = currentItem.stroke.closest('.ink-box');
+          if (parentBox) parentBox.classList.add('inked');
+
+          if (!strokeStartTime) strokeStartTime = now;
+          const elapsed = now - strokeStartTime;
+          const progress = Math.min(1, elapsed / currentItem.duration);
+          const eased = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+          const totalLen = parseFloat(currentItem.stroke.dataset.pathLen || '300');
+          currentItem.stroke.style.strokeDashoffset = `${totalLen * (1 - eased)}`;
+
+          try {
+            const pt = currentItem.stroke.getPointAtLength(totalLen * eased);
+            const svgEl = currentItem.stroke.ownerSVGElement;
+            if (svgEl) {
+              const ctm = svgEl.getScreenCTM();
+              if (ctm) {
+                const screenX = pt.x * ctm.a + pt.y * ctm.c + ctm.e;
+                const screenY = pt.x * ctm.b + pt.y * ctm.d + ctm.f;
+                const localX = screenX - paperRect.left;
+                const localY = screenY - paperRect.top;
+                const microOsc = Math.sin(now * 0.04) * 1.4;
+                positionPenAt(localX, localY, microOsc, 1);
+                prevPenX = localX;
+                prevPenY = localY;
+                playNibScratch(0.05);
+              }
+            }
+          } catch (e) {}
+
+          if (progress >= 1) {
+            currentItem.stroke.style.strokeDashoffset = '0';
+            strokeStartTime = null;
+            itemIdx++;
+            pauseUntil = now + 90;
+          }
+          activeWriteRaf = requestAnimationFrame(step);
+          return;
+        }
+
+        if (currentItem.kind === 'text') {
+          if (currentItem.parentBox) {
+            currentItem.parentBox.classList.add('inked');
+          }
+
+          if (charIdx >= currentItem.chars.length) {
+            itemIdx++;
+            charIdx = 0;
+            prevLineTop = null;
+            pauseUntil = now + mode.blockPauseMs;
+            activeWriteRaf = requestAnimationFrame(step);
+            return;
+          }
+
+          const ch = currentItem.chars[charIdx];
+          const chRect = ch.getBoundingClientRect();
+
+          // Detect line wrap (carriage return) so the pen lifts and sweeps back cleanly
+          if (prevLineTop !== null && Math.abs(chRect.top - prevLineTop) > 12 && chRect.width > 0) {
+            const targetX = chRect.left - paperRect.left + 2;
+            const targetY = chRect.top - paperRect.top + chRect.height * 0.74;
+            prevLineTop = chRect.top;
+            liftAnim = {
+              start: now,
+              duration: mode.lineLiftMs,
+              fromX: prevPenX !== null ? prevPenX : targetX,
+              fromY: prevPenY !== null ? prevPenY : targetY,
+              toX: targetX,
+              toY: targetY
+            };
+            activeWriteRaf = requestAnimationFrame(step);
+            return;
+          }
+
+          revealCharacter(ch);
+
+          if (chRect.width > 0 && chRect.height > 0) {
+            prevLineTop = chRect.top;
+            const penX = chRect.left - paperRect.left + chRect.width * 0.75;
+            const baselineY = chRect.top - paperRect.top + chRect.height * 0.75;
+
+            // Realistic hand/wrist up-and-down letter stroke oscillation
+            const isSpace = ch.textContent === ' ';
+            const strokeWave = isSpace ? -3.5 : Math.sin(charIdx * 2.35) * 3.2;
+            const tiltWave = isSpace ? -4 : Math.cos(charIdx * 1.9) * 3.6;
+
+            positionPenAt(penX, baselineY + strokeWave, tiltWave, 1);
+            prevPenX = penX;
+            prevPenY = baselineY;
+
+            if (!isSpace) {
+              playNibScratch(0.05);
+            }
+          }
+
+          // Slightly linger on punctuation (, . — ! ? :) just like real handwriting
+          const txt = ch.textContent;
+          let extraPause = 0;
+          if (txt === '.' || txt === '!' || txt === '?' || txt === '—') {
+            extraPause = mode.charMs * 2.8;
+          } else if (txt === ',' || txt === ':' || txt === ';') {
+            extraPause = mode.charMs * 1.6;
+          } else if (txt === ' ') {
+            extraPause = mode.charMs * 0.4;
+          }
+
+          charIdx++;
+          pauseUntil = now + mode.charMs + extraPause;
+          activeWriteRaf = requestAnimationFrame(step);
+        }
+      }
+
+      activeWriteRaf = requestAnimationFrame(step);
+    }
+
+    function replayCurrentPage() {
+      const slide = slides[currentSlide];
+      if (!slide) return;
+      playPageTurnSound();
+      runHandwritingOnCurrentSlide();
+    }
+
+    function cycleInkSpeed() {
+      speedIndex = (speedIndex + 1) % SPEED_MODES.length;
+      const btn = document.getElementById('speed-toggle-btn');
+      btn.textContent = SPEED_MODES[speedIndex].label;
+      runHandwritingOnCurrentSlide();
+    }
 
     // Initialize Pagination Dots
     function initDots() {
@@ -952,15 +1534,22 @@
     // Navigate to Specific Slide
     function goToSlide(index) {
       if (index < 0 || index >= totalSlides) return;
+      const isChanging = index !== currentSlide;
       currentSlide = index;
 
       slides.forEach((slide, i) => {
         if (i === currentSlide) {
+          slide.classList.remove('active');
+          void slide.offsetWidth;
           slide.classList.add('active');
         } else {
           slide.classList.remove('active');
         }
       });
+
+      if (isChanging) {
+        playPageTurnSound();
+      }
 
       // Update Bookmark Tabs
       tabs.forEach((tab, i) => {
@@ -985,10 +1574,10 @@
       pageCounter.textContent = `Page ${currentSlide + 1} of ${totalSlides} — ${slideTitles[currentSlide]}`;
 
       initDots();
+      runHandwritingOnCurrentSlide();
 
-      // Resize signature canvas cleanly when landing on final slide
       if (currentSlide === totalSlides - 1) {
-        setTimeout(resizeSignatureCanvas, 60);
+        setTimeout(resizeSignatureCanvas, 90);
       }
     }
 
@@ -1004,13 +1593,24 @@
       }
     }
 
+    // Interactive Neighborhood Stop Highlight on Page 2
+    function highlightNeighborhood(name, desc) {
+      const readout = document.getElementById('neighborhood-readout');
+      if (!readout) return;
+      playNibScratch(0.12);
+      readout.innerHTML = `
+        <span class="font-bold text-[#a61c1c]">${name}:</span>
+        <span class="text-[#2d2722]">${desc}</span>
+      `;
+    }
+
     // Keyboard Arrow Support
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') nextSlide();
       if (e.key === 'ArrowLeft') prevSlide();
     });
 
-    // Interactive Slack vs Discord Toggle on Slide 4
+    // Interactive Slack vs Discord Toggle on Page 4
     function togglePlatform(platform) {
       const btnSlack = document.getElementById('btn-slack');
       const btnDiscord = document.getElementById('btn-discord');
@@ -1021,12 +1621,12 @@
         btnDiscord.className = 'px-2.5 py-1 bg-transparent text-[#1e1b18] cursor-pointer';
         preview.innerHTML = `
           <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-            <p class="font-bold text-[#1e1b18]">#three-avenues-book-club</p>
+            <p class="font-mono-code font-bold text-[#1e1b18]">#three-avenues-book-club</p>
             <p class="text-xs text-[#4a433b] mt-0.5">Managed by DSA Ed Foundation volunteers · Zero moderation headache for your staff</p>
           </div>
           <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-            <p class="font-semibold text-[#a61c1c]">Why Slack fits Three Avenues:</p>
-            <p class="text-sm text-[#2c2621] mt-1">
+            <p class="font-bold text-[#a61c1c]">Why Slack fits Three Avenues:</p>
+            <p class="text-base text-[#2c2621] mt-1">
               Your neighborhood readers already have Slack open on their laptops and phones during the workday—meaning one click to RSVP, grab the book from your shop, and jump into chapter threads!
             </p>
           </div>
@@ -1036,12 +1636,12 @@
         btnSlack.className = 'px-2.5 py-1 bg-transparent text-[#1e1b18] cursor-pointer';
         preview.innerHTML = `
           <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-            <p class="font-bold text-[#1e1b18]">#three-avenues-lounge (Discord Server)</p>
+            <p class="font-mono-code font-bold text-[#1e1b18]">#three-avenues-lounge (Discord Server)</p>
             <p class="text-xs text-[#4a433b] mt-0.5">Voice + text channels set up &amp; moderated if your membership prefers Discord</p>
           </div>
           <div class="p-3 rounded-lg bg-[#f8f2e4] border border-[#1e1b18]/15">
-            <p class="font-semibold text-[#a61c1c]">Member-Driven Choice:</p>
-            <p class="text-sm text-[#2c2621] mt-1">
+            <p class="font-bold text-[#a61c1c]">Member-Driven Choice:</p>
+            <p class="text-base text-[#2c2621] mt-1">
               Whatever platform your readers actually check, we build and manage it for you—and connect your channel to the wider Chicago Solidarity Book Club Union.
             </p>
           </div>
@@ -1049,10 +1649,15 @@
       }
     }
 
-    // Interactive Fountain Pen Signature Canvas on Slide 7
+    // =========================================================
+    // INTERACTIVE FOUNTAIN PEN SIGNATURE PAD -> PNG + EMAIL ADAM
+    // =========================================================
     const canvas = document.getElementById('signature-pad');
     const ctx = canvas.getContext('2d');
     let isDrawing = false;
+    let hasSigned = false;
+    let usedTouchFinger = false;
+    let autoEmailTimer = null;
     let lastX = 0;
     let lastY = 0;
 
@@ -1067,12 +1672,11 @@
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
       ctx.strokeStyle = '#1e1b18';
-      ctx.lineWidth = 2.4;
+      ctx.lineWidth = 2.6;
 
-      // Subtle guide text on canvas
       ctx.save();
-      ctx.font = 'italic 16px "Crimson Pro", Georgia, serif';
-      ctx.fillStyle = 'rgba(74, 67, 59, 0.42)';
+      ctx.font = 'italic 15px "Cormorant Garamond", Georgia, serif';
+      ctx.fillStyle = 'rgba(74, 67, 59, 0.45)';
       ctx.fillText('x ________________________________________', 18, rect.height - 22);
       ctx.restore();
     }
@@ -1089,14 +1693,23 @@
 
     function startDraw(e) {
       isDrawing = true;
+      if (e.touches) {
+        usedTouchFinger = true;
+      }
+      if (autoEmailTimer) {
+        clearTimeout(autoEmailTimer);
+        autoEmailTimer = null;
+      }
       const pos = getPointerPos(e);
       lastX = pos.x;
       lastY = pos.y;
+      playNibScratch(0.1);
     }
 
     function drawStroke(e) {
       if (!isDrawing) return;
       e.preventDefault();
+      hasSigned = true;
       const pos = getPointerPos(e);
       ctx.beginPath();
       ctx.moveTo(lastX, lastY);
@@ -1107,7 +1720,21 @@
     }
 
     function endDraw() {
+      if (!isDrawing) return;
       isDrawing = false;
+
+      if (hasSigned) {
+        applyFoundingStamp();
+        const status = document.getElementById('status-message');
+        if (usedTouchFinger) {
+          status.textContent = 'Finger signature captured! Saving PNG & opening email to Adam…';
+          autoEmailTimer = setTimeout(() => {
+            sendSignatureToAdam(false);
+          }, 1150);
+        } else {
+          status.textContent = 'Signature inked! Click “Send Signature to Adam” to launch email!';
+        }
+      }
     }
 
     canvas.addEventListener('mousedown', startDraw);
@@ -1125,20 +1752,84 @@
     });
 
     function clearSignaturePad() {
+      if (autoEmailTimer) {
+        clearTimeout(autoEmailTimer);
+        autoEmailTimer = null;
+      }
+      hasSigned = false;
+      usedTouchFinger = false;
       resizeSignatureCanvas();
       document.getElementById('founding-stamp').classList.remove('stamped');
-      document.getElementById('status-message').textContent = 'Ready to grab coffee & launch!';
+      document.getElementById('status-message').textContent = 'Sign above with your finger to launch email!';
     }
 
     function applyFoundingStamp() {
       const stamp = document.getElementById('founding-stamp');
       const status = document.getElementById('status-message');
       stamp.classList.add('stamped');
-      status.textContent = 'Stamped & Chartered! Welcome to the Union, Three Avenues!';
+      if (!hasSigned) {
+        status.textContent = 'COUNT US IN — Stamped! Welcome to the Union, Three Avenues!';
+      }
     }
 
-    // Boot presentation
+    function sendSignatureToAdam() {
+      applyFoundingStamp();
+      const status = document.getElementById('status-message');
+
+      // 1. Download PNG snapshot of the signed ledger (`Three-Avenues-Solidarity-Signature.png`)
+      try {
+        const exportCanvas = document.createElement('canvas');
+        exportCanvas.width = canvas.width;
+        exportCanvas.height = canvas.height;
+        const eCtx = exportCanvas.getContext('2d');
+        eCtx.fillStyle = '#f8f2e4';
+        eCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+        eCtx.drawImage(canvas, 0, 0);
+
+        eCtx.save();
+        eCtx.strokeStyle = '#a61c1c';
+        eCtx.lineWidth = 4;
+        eCtx.strokeRect(exportCanvas.width - 295, 18, 270, 76);
+        eCtx.fillStyle = '#a61c1c';
+        eCtx.font = 'bold 17px Georgia, serif';
+        eCtx.fillText('COUNT US IN — FOUNDING PARTNER', exportCanvas.width - 282, 50);
+        eCtx.font = '15px Georgia, serif';
+        eCtx.fillText('Three Avenues Bookshop · Chicago', exportCanvas.width - 282, 74);
+        eCtx.restore();
+
+        const dataUrl = exportCanvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.download = 'Three-Avenues-Solidarity-Signature.png';
+        link.href = dataUrl;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (err) {
+        // Proceed cleanly to mailto even if sandbox restricts auto-download
+      }
+
+      // 2. Open default email client to Adam's personal address
+      const recipient = 'therealadamcornelius@gmail.com';
+      const subject = encodeURIComponent('Three Avenues Bookshop x Solidarity Book Club Union — Count Us In!');
+      const body = encodeURIComponent(
+        "Hey Adam!\n\n" +
+        "Three Avenues Bookshop is officially in as a Founding Partner of the Chicago Solidarity Book Club Union!\n\n" +
+        "(YES, Adam is giving you his personal email — 'cause that's how not-corporate he wants this to be. It's just solidarity, yo.)\n\n" +
+        "Quick notes for getting started:\n" +
+        "- Attached: Three-Avenues-Solidarity-Signature.png (saved straight from our signed founding ledger!)\n" +
+        "- Let's get our managed Slack channel & shared calendar rolling.\n" +
+        "- Also let's chat about zero-work POS integration & that toilet handle fund!\n\n" +
+        "In solidarity,\n" +
+        "Three Avenues Bookshop (Chicago)"
+      );
+
+      status.textContent = 'Signature PNG saved & launching email to Adam!';
+      window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    }
+
+    // Boot presentation cleanly
     window.addEventListener('load', () => {
+      prepareHandwritingSpans();
       goToSlide(0);
       resizeSignatureCanvas();
     });
